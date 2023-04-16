@@ -1,0 +1,19 @@
+{
+  "name": "SaturnDev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord-giveaways": "^6.0.1",
+    "discord.js": "^14.7.1",
+    "fs": "^0.0.1-security",
+    "mongodb": "^5.2.0",
+    "mongoose": "^7.0.3",
+    "ms": "^2.1.3"
+  }
+}
