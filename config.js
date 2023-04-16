@@ -1,6 +1,6 @@
 module.exports = {
     clients: {
-        activity: 'Loading...',
+        activity: 'Loading..',
         activityfr: 'En développement',
         activityen: 'In development',
         name: "Saturn",
