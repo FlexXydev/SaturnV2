@@ -4,7 +4,7 @@ module.exports = {
         activityfr: 'En développement',
         activityen: 'In development',
         name: "Saturn",
-        logo: "https://cdn.discordapp.com/avatars/945224613057683516/6e84cf951537722a3b9ad50c2e66cef3.png?size=1024",
+        logo: "https://media.discordapp.net/attachments/1058850782188933242/1101224929111838811/20230427_211136_0000.png",
     },
     
     db : {
@@ -20,5 +20,5 @@ module.exports = {
         everyoneMention: true
     },
 
-    token: 'OTQ1MjI0NjEzMDU3NjgzNTE2.GBsMHC.nocMDIqw52a8G04g29iyc7MAnAKSOM9MECSBrQ'
+    token: 'OTQ1MjI0NjEzMDU3NjgzNTE2.GzcFPT.BOTWMA2gtaLoOb8-SWYazTwNo268qSp05sxVXE'
 };

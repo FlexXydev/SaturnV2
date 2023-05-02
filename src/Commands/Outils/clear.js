@@ -39,21 +39,21 @@ class command {
                 const TargetMessages = (await Messages).filter((m) => m.author.id === user.id);
 
                 await Channel.bulkDelete(TargetMessages, true).then((msg) => {
-                    interaction.reply({ embeds: [Embed.setDescription(`✅ | **Clear de ${args} messages du membre ${user.toString()}** !`)], ephemeral: false });
+                    interaction.reply({ embeds: [Embed.setDescription(`✅ | **Clear de ${args} messages du membre ${user.toString()}** !`)], ephemeral: true });
                 }).catch((err) => {
                     interaction.reply({ embeds: [Embed.setDescription(`❌ | **J'ai rencontré une erreur : ${err}**`)], ephemeral: true })
                 });
             } else if(args >= 1 && args <= 100){
                 await interaction.channel.bulkDelete(args, true).then((msg) => {
-                    interaction.reply({ embeds: [Embed.setDescription(`✅ | **Clear de ${args} messages** !`)], ephemeral: false });
+                    interaction.reply({ embeds: [Embed.setDescription(`✅ | **Clear de ${args} messages** !`)], ephemeral: true });
                 }).catch((err) => {
                     interaction.reply({ embeds: [Embed.setDescription(`❌ | **J'ai rencontré une erreur : ${err}**`)], ephemeral: true })
                 });
             } else {
-                interaction.reply({ embeds: [Embed.setDescription(`❌ | **Tu n'as pas spécifié un nombre -> (1-99)** !`)], ephemeral: false });
+                interaction.reply({ embeds: [Embed.setDescription(`❌ | **Tu n'as pas spécifié un nombre -> (1-99)** !`)], ephemeral: true });
             }
         } else {
-            interaction.reply({ embeds: [Embed.setDescription(`❌ | **Tu n'as pas la permission d'exécuter cette commande** !`)], ephemeral: false });
+            interaction.reply({ embeds: [Embed.setDescription(`❌ | **Tu n'as pas la permission d'exécuter cette commande** !`)], ephemeral: true });
         }
     }
 }

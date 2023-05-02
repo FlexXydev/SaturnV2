@@ -7,7 +7,7 @@ const config = require('../../config')
 module.exports = {
 name: 'ready',
 execute(client) {
-var randomColor = Math.floor(Math.random()*16777215).toString(16);
+
 const now = new Date();
 const time = now.toLocaleTimeString("fr-FR")
     
