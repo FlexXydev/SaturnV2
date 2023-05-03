@@ -1,12 +1,30 @@
 const { ActivityType, EmbedBuilder } = require('discord.js');
+const mongoose = require('mongoose');
 const CHANNEL_ID = '1060193672433520760';
 const ROLE_ID = '1091319472217919568';
 const config = require('../../config')
+const mongodbURL = config.db.dbUri
 
 
 module.exports = {
 name: 'ready',
-execute(client) {
+async execute(client) {
+
+    // MangoDB
+
+    if(!mongodbURL) return;
+
+    await mongoose.connect(mongodbURL || ' ', {
+        keepAlive: true,
+        useNewURLParser: true,
+        useUnifiedTopology: true
+    })
+
+    if (mongoose.connect) {
+        console.log("🌐 | La DB est lancée ! ")
+    } else {
+        console.error(`❌ | Une erreur s'est produite lors de la connection à la db : ${error}`)
+    }
 
 const now = new Date();
 const time = now.toLocaleTimeString("fr-FR")
@@ -90,6 +108,5 @@ channel.send(`<@&${ROLE_ID}>`)
     }
     
     channel.send(`<@&${ROLE_ID}>`)
-
 }
 };

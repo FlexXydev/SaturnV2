@@ -20,5 +20,21 @@ module.exports = {
         everyoneMention: true
     },
 
-    token: 'OTQ1MjI0NjEzMDU3NjgzNTE2.GzcFPT.BOTWMA2gtaLoOb8-SWYazTwNo268qSp05sxVXE'
+    opt: {
+        DJ: {
+            enabled: false,
+            roleName: 'DJ',
+            commands: ['back', 'clear', 'filter', 'loop', 'pause', 'resume', 'seek', 'shuffle', 'skip', 'stop', 'volume']
+        },
+        maxVol: 100,
+        loopMessage: false,
+        discordPlayer: {
+            ytdlOptions: {
+                quality: 'highestaudio',
+                highWaterMark: 1 << 25
+            }
+        }
+    },
+
+    token: 'MTA5MTA2MTM0NDIyNjI1NDg5OA.Gewksm.51VtProwmjrCJh4Tbpts_jI6_5DeUQx-YojOXw'
 };
