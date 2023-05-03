@@ -10,6 +10,7 @@ bot.player = new Player(bot, bot.config.opt.discordPlayer);
 require('./src/Structure/Music/Events')(bot);
 require('./src/Structure/Handler/Command')(bot);
 require('./src/Structure/Handler/Events')(bot);
+require('./src/Structure/Giveaway/giveaway')(bot)
 
 bot.on('ready', async () => {
 
