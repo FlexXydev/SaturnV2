@@ -1,40 +1,45 @@
 module.exports = {
-    clients: {
-        activity: 'Loading..',
-        activityfr: 'En développement',
-        activityen: 'In development',
-        name: "Saturn",
-        logo: "https://media.discordapp.net/attachments/1058850782188933242/1101224929111838811/20230427_211136_0000.png",
-    },
-    
-    db : {
-      	dbUri: 'mongodb+srv://root:root@saturnbot.v331ybb.mongodb.net/?retryWrites=true&w=majority'  
-    },
-    
-    apikey : {
-      openaikey : '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',  
-    },
+    // Basic configuration
+    token: 'MTA5MTA2MTM0NDIyNjI1NDg5OA.Gewksm.51VtProwmjrCJh4Tbpts_jI6_5DeUQx-YojOXw', // Place here your token
+    status: 'v1.0',
+    developerGuildID: '1011629811921334343', // Place here your Guild ID
+    database: 'mongodb+srv://root:root@saturnbot.v331ybb.mongodb.net/?retryWrites=true&w=majority', // Place here your MongoDB access
 
-    giveaway: {
-        hostedBy: true,
-        everyoneMention: true
-    },
-
-    opt: {
-        DJ: {
-            enabled: false,
-            roleName: 'DJ',
-            commands: ['back', 'clear', 'filter', 'loop', 'pause', 'resume', 'seek', 'shuffle', 'skip', 'stop', 'volume']
-        },
-        maxVol: 100,
-        loopMessage: false,
-        discordPlayer: {
-            ytdlOptions: {
-                quality: 'highestaudio',
-                highWaterMark: 1 << 25
-            }
-        }
-    },
-
-    token: 'MTA5MTA2MTM0NDIyNjI1NDg5OA.Gewksm.51VtProwmjrCJh4Tbpts_jI6_5DeUQx-YojOXw'
-};
+    // Ticket configuration 
+    ticketName: 'ticket-',
+    ticketDescription: '🌿 Ticket open by',
+    ticketCreate: '✅ Your ticket has been created',
+    ticketAlreadyExist: 'Sorry but you already have an open ticket.',
+    ticketNoPermissions: 'Sorry, but you do not have permission to do this.',
+    ticketError: 'Something went wrong, try again later.',
+    ticketMessageTitle: 'Welcome to you, thanks for opening a ticket.',
+    ticketMessageDescription: 'A member of our moderation team will soon take care of your request.\nThanks to you for waiting in calm and good mood.',
+    ticketClose: 'Close',
+    ticketCloseEmoji: '📪',
+    ticketLock: 'Lock',
+    ticketLockEmoji: '🔒',
+    ticketUnlock: 'Unlock',
+    ticketUnlockEmoji: '🔓',
+    ticketClaim: 'Claim',
+    ticketClaimEmoji: '👋',
+    ticketManage: 'Members',
+    ticketManageEmoji: '➕',
+    ticketManageMenuTitle: 'Choose a member.',
+    ticketManageMenuEmoji: '❔',
+    ticketCloseTitle: 'The ticket is currently being closed...',
+    ticketCloseDescription: 'Ticket will be closed in 5 seconds.',
+    ticketSuccessLocked: 'Ticket was locked succesfully.',
+    ticketAlreadyLocked: 'This ticket is already locked.',
+    ticketSuccessUnlocked: 'Ticket was unlocked succesfully.',
+    ticketAlreadyUnlocked: 'This ticket is already unlocked.',
+    ticketSuccessClaim: 'Ticket was successfully claimed by',
+    ticketAlreadyClaim: 'Ticket is already claimed by',
+    ticketDescriptionClaim: ', it was claimed by',
+    ticketTranscriptMember: 'Member:',
+    ticketTranscriptTicket: 'Ticket:',
+    ticketTranscriptClaimed: 'Claimed:',
+    ticketTranscriptModerator: 'Moderator:',
+    ticketTranscriptTime: 'Time:',
+    ticketMemberAdd: 'has been added to the ticket.',
+    ticketMemberRemove: 'has been removed to the ticket.',
+}
