@@ -1,0 +1,18 @@
+node:events:505
+      throw er; // Unhandled 'error' event
+      ^
+
+TypeError: interaction.isButton is not a function
+    at Object.execute (C:\Users\FlexXyDev\OneDrive\Bureau\FlexXyDev\SaturnTest\src\Events\ticketSystem\ticketActions.js:11:25)
+    at Client.<anonymous> (C:\Users\FlexXyDev\OneDrive\Bureau\FlexXyDev\SaturnTest\src\Structure\Handler\Events.js:27:49)
+    at Client.emit (node:events:539:35)
+    at InteractionCreateAction.handle (C:\Users\FlexXyDev\OneDrive\Bureau\FlexXyDev\SaturnTest\node_modules\discord.js\src\client\actions\InteractionCreate.js:96:12)  
+    at Object.module.exports [as INTERACTION_CREATE] (C:\Users\FlexXyDev\OneDrive\Bureau\FlexXyDev\SaturnTest\node_modules\discord.js\src\client\websocket\handlers\INTERACTION_CREATE.js:4:36)
+    at WebSocketManager.handlePacket (C:\Users\FlexXyDev\OneDrive\Bureau\FlexXyDev\SaturnTest\node_modules\discord.js\src\client\websocket\WebSocketManager.js:353:31) 
+    at WebSocketManager.<anonymous> (C:\Users\FlexXyDev\OneDrive\Bureau\FlexXyDev\SaturnTest\node_modules\discord.js\src\client\websocket\WebSocketManager.js:237:12)  
+    at WebSocketManager.emit (C:\Users\FlexXyDev\OneDrive\Bureau\FlexXyDev\SaturnTest\node_modules\@vladfrangu\async_event_emitter\dist\index.js:282:31)
+    at WebSocketShard.<anonymous> (C:\Users\FlexXyDev\OneDrive\Bureau\FlexXyDev\SaturnTest\node_modules\@discordjs\ws\dist\index.js:1102:51)
+    at WebSocketShard.emit (C:\Users\FlexXyDev\OneDrive\Bureau\FlexXyDev\SaturnTest\node_modules\@vladfrangu\async_event_emitter\dist\index.js:282:31)
+Emitted 'error' event on Client instance at:
+    at emitUnhandledRejectionOrErr (node:events:384:10)
+    at processTicksAndRejections (node:internal/process/task_queues:85:21

@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "discord-giveaways": "^6.0.1",
+    "discord-html-transcripts": "^3.1.4",
     "discord-player": "^6.3.0",
     "discord.js": "^14.10.2",
     "ffmpeg-static": "^5.1.0",
