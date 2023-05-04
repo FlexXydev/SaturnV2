@@ -1,9 +1,9 @@
 module.exports = {
     // Basic configuration
     token: 'MTA5MTA2MTM0NDIyNjI1NDg5OA.Gewksm.51VtProwmjrCJh4Tbpts_jI6_5DeUQx-YojOXw', // Place here your token
-    status: 'v1.0',
     developerGuildID: '1011629811921334343', // Place here your Guild ID
     database: 'mongodb+srv://root:root@saturnbot.v331ybb.mongodb.net/?retryWrites=true&w=majority', // Place here your MongoDB access
+    avatarURL: 'https://cdn.discordapp.com/avatars/945224613057683516/8a4ed7eb2fad0f0cbf3c7ff2dc336969.webp',
 
     // Ticket configuration 
     ticketName: 'ticket-',
@@ -42,4 +42,13 @@ module.exports = {
     ticketTranscriptTime: 'Time:',
     ticketMemberAdd: 'has been added to the ticket.',
     ticketMemberRemove: 'has been removed to the ticket.',
+
+    //Activity
+    status: 'Loading...',
+    activity1: 'En développement',
+    activity2: 'In developpement',
+
+    //Loading 
+    channelid : '1060193672433520760',
+    roleid: '1091319472217919568'
 }
