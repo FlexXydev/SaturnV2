@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client({intents: 3276799});
 const config = require('./config');
 const { connect, mongoose } = require('mongoose');
-const { ActivityType, EmbedBuilder } = require('discord.js');
+const { ActivityType, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
 const { loadEvents } = require('./Handlers/eventHandler');
 const { loadCommands } = require('./Handlers/commandHandler');
 const now = new Date();
@@ -12,6 +12,31 @@ client.commands = new Discord.Collection();
 client.buttons = new Discord.Collection();
 client.selectMenus = new Discord.Collection();
 client.modals = new Discord.Collection();
+
+// When the bot join a guild
+
+client.on('guildCreate', async guild => {
+  try {
+    const owner = await guild.fetchOwner();
+    const avatarURL = client.user.displayAvatarURL({ format: 'png', size: 512 });
+    const embed = new EmbedBuilder()
+      .setColor("2b2d31")
+      .setTitle(`Thank you for adding ${client.user.username} in your server`)
+      .setFooter({ text: 'Thank you so much !'})
+      .setDescription(`Thank you for adding ${client.user.username} to your server ! If you have any question or some bug report feel free to join our support server !`)
+      .setThumbnail(avatarURL);
+    const row = new ActionRowBuilder()
+      .addComponents(
+        new ButtonBuilder()
+          .setStyle(ButtonStyle.Link)
+          .setLabel('Support Server')
+          .setURL('https://discord.gg/ndJyxZs3sF')
+      );
+    owner.send({ embeds: [embed], components: [row] });
+  } catch (error) {
+    console.error(`Unable to send message to server owner for guild ${guild.name}.`, error);
+  }
+});
 
 // When ready
 client

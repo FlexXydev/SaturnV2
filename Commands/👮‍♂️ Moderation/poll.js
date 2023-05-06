@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, EmbedBuilder, ChannelType } = require("discord.js");
+const { SlashCommandBuilder, EmbedBuilder, ChannelType, PermissionFlagsBits } = require("discord.js");
 
 module.exports = {
     moderatorOnly: true,
@@ -6,6 +6,7 @@ module.exports = {
         .setName("poll")
         .setDescription("Create a poll and send it to a certain channel.")
         .setDMPermission(false)
+        .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
         .addStringOption(option =>
             option.setName("description")
                 .setDescription("Describe the poll.")
