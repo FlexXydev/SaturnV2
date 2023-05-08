@@ -13,6 +13,8 @@ client.buttons = new Discord.Collection();
 client.selectMenus = new Discord.Collection();
 client.modals = new Discord.Collection();
 
+
+
 // When the bot join a guild
 
 client.on('guildCreate', async guild => {
