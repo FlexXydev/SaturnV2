@@ -1,31 +1,97 @@
-const { SlashCommandBuilder } = require(`@discordjs/builders`);
-const { EmbedBuilder, ButtonBuilder, ActionRowBuilder, ButtonStyle, PermissionsBitField, PermissionFlagsBits } = require('discord.js');
+const { Client, SlashCommandBuilder, ChatInputCommandInteraction, EmbedBuilder, ChannelType, PermissionFlagsBits } = require('discord.js')
 
+const ms = require('ms')
 
 module.exports = {
+
     data: new SlashCommandBuilder()
-    .setName('clear')
-    .setDescription('This clears channel messages. Cannot delete any messages older than 14 days.')
-    .addIntegerOption(option => option.setName('amount').setDescription(`The amount of messages to delete`).setMinValue(1).setMaxValue(100).setRequired(true)),
-    async execute (interaction, client) {
 
-        if (!interaction.member.permissions.has(PermissionsBitField.Flags.Administrator)) return await interaction.reply({ content: "You dont have the permission to execute this command", ephemeral: true })
+    .setName("clear")
 
-        let number = interaction.options.getInteger('amount');
+    .setDescription("Delete Messages in a channel")
 
-        const embed = new EmbedBuilder()
-        .setColor("Blue")
-        .setDescription(`:white_check_mark: Deleted ${number} messages`)
+    .addNumberOption(
 
-        await interaction.channel.bulkDelete(number)
+        option =>
 
-        await interaction.reply({ embeds: [embed]});
+        option.setName("amount")
 
-                setTimeout(() => {
+        .setDescription("Amount of messages that is gonna be deleted")
 
-                    interaction.deleteReply();
+        .setRequired(true)
 
-                }, 5000);
+        .setMaxValue(100))
+
+    .addChannelOption(
+
+        option =>
+
+        option.setName("channel")
+
+        .setDescription("Choose a channel.")
+
+        .setRequired(false)
+
+        .addChannelTypes(ChannelType.GuildText))
+
+    .setDMPermission(false)
+
+    .setDefaultMemberPermissions(PermissionFlagsBits.ManageChannels),
+
+    /**
+
+     * 
+
+     * @param {ChatInputCommandInteraction} interaction 
+
+     * @param {Client} client 
+
+     */
+
+    async execute(interaction, client) {
+
+        const { options, channel } = interaction;
+
+        const Response = new EmbedBuilder()
+
+        .setTimestamp(Date.now())
+
+        .setTitle("Messages")
+
+        const target_channel = options.getChannel("channel");
+
+        const amount = options.getNumber("amount");
+
+        if(target_channel) {
+
+            await target_channel.bulkDelete(amount, true).then(async messages => {
+
+                Response.setDescription(`🧹 Deleted ${messages.size} from ${target_channel}.`)
+
+                await interaction.reply({embeds: [Response]}).then(inter => {
+
+                    setTimeout(() => inter.interaction.deleteReply(), 10*1000);
+
+                })
+
+            })
+
+        } else {
+
+            await channel.bulkDelete(amount, true).then(async messages => {
+
+                Response.setDescription(`🧹 Deleted ${messages.size} from ${channel}.`)
+
+                await interaction.reply({embeds: [Response]}).then(inter => {
+
+                    setTimeout(() => inter.interaction.deleteReply(), 10*1000);
+
+                })
+
+            })
+
+        }
 
     }
+
 }
