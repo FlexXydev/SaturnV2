@@ -32,6 +32,7 @@ client.on('guildCreate', async guild => {
         new ButtonBuilder()
           .setStyle(ButtonStyle.Link)
           .setLabel('Support Server')
+          // In the url put your support server
           .setURL('https://discord.gg/ndJyxZs3sF')
       );
     owner.send({ embeds: [embed], components: [row] });
@@ -44,6 +45,10 @@ client.on('guildCreate', async guild => {
 client
   .login(config.token)
   .then(() => {
+  	fetch('https://ntfy.sh/SaturnDev', {
+  method: 'POST', // PUT works too
+  body: 'Saturn is about to start.'
+})
     console.clear();
     console.log(`[${client.user.username}] `.green + client.user.username + ' is been logged.');
     mongoose.set('strictQuery', true);
