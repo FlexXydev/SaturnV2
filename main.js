@@ -95,7 +95,7 @@ client
             type: ActivityType.Playing
           })
           case 1:
-            console.log(`[${client.user.username}] `.green + 'Activity changed to Englis')
+            console.log(`[${client.user.username}] `.green + 'Activity changed to English')
             client.user.setPresence({
               activities: [{ name: config.activity2 }],
               status: 'dnd',
