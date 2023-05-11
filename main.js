@@ -46,7 +46,7 @@ client
   .login(config.token)
   .then(() => {
   	fetch('https://ntfy.sh/SaturnDev', {
-  method: 'POST', // PUT works too
+  method: 'POST', // PUT works too !
   body: 'Saturn is about to start.'
 })
     console.clear();
