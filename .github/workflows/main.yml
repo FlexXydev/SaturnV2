@@ -1,0 +1,26 @@
+name : Deploy to server
+
+on :
+  push:
+    branches: [ main ]
+
+jobs :
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: action/checkout@v2
+      
+      - name: Install Dependencies
+        run: npm i
+      
+      - name: Start
+        run: node .
+      
+      - name: Upload to server
+        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+        with:
+          server: ${{ secrets.SERVER }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+        
