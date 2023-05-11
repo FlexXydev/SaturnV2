@@ -1,6 +1,6 @@
 # Discord Bot Description
 
-This is a French Discord bot that comes packed with features to make your server experience more enjoyable. Some of the main features of the bot are:
+This is a French Discord bot that comes packed with features to make your server experience more enjoyable. Some of the main features of the bot are :
 
 ## Error Handling
 
