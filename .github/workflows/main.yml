@@ -33,8 +33,8 @@ jobs:
 
           password: ${{ secrets.PASSWORD }}
 
-          server-dir: . 
+          server-dir: ./Bot
 
-          local-dir: .
+          local-dir: ./
 
           exclude: .git*
