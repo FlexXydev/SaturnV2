@@ -24,3 +24,42 @@ jobs :
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
         
+name: Deploy
+
+on:
+
+  push:
+
+    branches:
+
+      - main
+
+jobs:
+
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repository
+
+        uses: actions/checkout@v2
+
+      - name: FTP Deploy
+
+        uses: SamKirkland/FTP-Deploy-Action@4.1
+
+        with:
+
+          server: ${{ secrets.SERVER }}
+
+          username: ${{ secrets.USERNAME }}
+
+          password: ${{ secrets.ASSWORD }}
+
+          server-dir: . 
+
+          local-dir: .
+
+          exclude: .git*
