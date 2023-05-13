@@ -13,7 +13,7 @@ jobs:
 
   deploy:
 
-    runs-on: debian-latest
+    runs-on: ubuntu-latest
 
     steps:
 
@@ -43,4 +43,4 @@ jobs:
 
           port: 2022
           
-          timeout: 60000	
+          'parallel': 5
