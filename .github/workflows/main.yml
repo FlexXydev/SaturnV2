@@ -23,7 +23,7 @@ jobs:
 
       - name: FTP Deploy
 
-        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+        uses: jakejarvis/ftp-deploy-action@3.1.1
 
         with:
 
@@ -33,14 +33,10 @@ jobs:
 
           password: ${{ secrets.PASSWORD }}
 
-          server-dir: ./Bot/
+          server-dir: . 
 
           local-dir: ./
 
           exclude: .git*
-          
-          protocol: ftps
 
-          port: 2022
-          
-          'parallel': 5
+          timeout: 600000
