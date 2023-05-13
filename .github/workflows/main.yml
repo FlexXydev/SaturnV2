@@ -38,5 +38,6 @@ jobs:
           local-dir: ./
 
           exclude: .git*
+          protocol: ftps
+
           port: 2022
-          timeout: 120000
