@@ -1,6 +1,10 @@
 module.exports = {
     // Basic configuration
+<<<<<<< HEAD
     token: 'OTQ1MjI0NjEzMDU3NjgzNTE2.GGy8Ps.NwavQNXJOxz1onM5RmOWiBWRnz-k8wq5rDwCfQ', // Place here your token
+=======
+    token: 'MTA5MTA2MTM0NDIyNjI1NDg5OA.Gk7th8.LyfV7ujz_Oj5cuTmCcl2n4fUn8Nt4vTMWz2Kz8', // Place here your token
+>>>>>>> fc7065564f7872f0b361f34fabf48dddf56a3682
     database: 'mongodb+srv://root:root@saturnbot.v331ybb.mongodb.net/?retryWrites=true&w=majority', // Place here your MongoDB access
     avatarURL: 'https://cdn.discordapp.com/avatars/945224613057683516/8a4ed7eb2fad0f0cbf3c7ff2dc336969.webp',
     developperID: '310107091542999040', // Place your id here

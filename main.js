@@ -32,7 +32,11 @@ client.on('guildCreate', async guild => {
         new ButtonBuilder()
           .setStyle(ButtonStyle.Link)
           .setLabel('Support Server')
+<<<<<<< HEAD
           // In the url put your support server
+=======
+          // In the url put your support server !
+>>>>>>> fc7065564f7872f0b361f34fabf48dddf56a3682
           .setURL('https://discord.gg/ndJyxZs3sF')
       );
     owner.send({ embeds: [embed], components: [row] });

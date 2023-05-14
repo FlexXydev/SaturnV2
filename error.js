@@ -1,5 +1,6 @@
 process.on('uncaughtException', (err) => { 
 
+<<<<<<< HEAD
      console.log(`[Error Handler] `.bgRed + `An Exception error occured: ${err}`.bgRed);
     
     fetch('https://ntfy.sh/SaturnDev', {
@@ -23,3 +24,28 @@ process.on('uncaughtException', (err) => {
 })
 
    });
+=======
+  console.log(`[Error Handler] `.bgRed + `An Exception error occured: ${err}`.bgRed);
+ 
+ fetch('https://ntfy.sh/SaturnDev', {
+ method: 'POST',
+ body: `[Error Handler] An Exception error occured: ${err}`,
+ headers: { 'Priority': '5' }
+})
+
+}); 
+
+ 
+
+process.on('unhandledRejection', (err) => { 
+  console.log(`[Error Handler] `.bgRed + `An Rejection error occured ${err}`.bgRed); 
+fetch('https://ntfy.sh/SaturnDev', {
+method: 'POST',
+body: `[Error Handler] An Rejection error occured: ${err}`,
+headers: { 'Priority': '5' }
+})
+
+}); 
+
+
+>>>>>>> fc7065564f7872f0b361f34fabf48dddf56a3682
