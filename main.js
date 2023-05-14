@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client({intents: 3276799});
 const config = require('./config');
 const { connect, mongoose } = require('mongoose');
-const { ActivityType, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
+const { ActivityType, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, Events } = require('discord.js');
 const { loadEvents } = require('./Handlers/eventHandler');
 const { loadCommands } = require('./Handlers/commandHandler');
 const now = new Date();
@@ -12,6 +12,8 @@ client.commands = new Discord.Collection();
 client.buttons = new Discord.Collection();
 client.selectMenus = new Discord.Collection();
 client.modals = new Discord.Collection();
+
+
 
 // When the bot join a guild
 
@@ -30,6 +32,7 @@ client.on('guildCreate', async guild => {
         new ButtonBuilder()
           .setStyle(ButtonStyle.Link)
           .setLabel('Support Server')
+          // In the url put your support server
           .setURL('https://discord.gg/ndJyxZs3sF')
       );
     owner.send({ embeds: [embed], components: [row] });
@@ -42,6 +45,10 @@ client.on('guildCreate', async guild => {
 client
   .login(config.token)
   .then(() => {
+  	fetch('https://ntfy.sh/SaturnDev', {
+  method: 'POST', // PUT works too
+  body: 'Saturn is about to start.'
+})
     console.clear();
     console.log(`[${client.user.username}] `.green + client.user.username + ' is been logged.');
     mongoose.set('strictQuery', true);
@@ -103,3 +110,121 @@ client
     });
     })
   .catch((err) => console.log(err));
+
+// Leave Message //
+
+client.on(Events.GuildMemberRemove, async (member, err) => {
+
+    const leavedata = await welcomeschema.findOne({ Guild: member.guild.id });
+
+    if (!leavedata) return;
+
+    else {
+
+        const channelID = leavedata.Channel;
+
+        const channelwelcome = member.guild.channels.cache.get(channelID);
+
+        const embedleave = new EmbedBuilder()
+
+        .setColor("DarkBlue")
+
+        .setTitle(`${member.user.username} has left`)
+
+        .setDescription( `> ${member} has left the Server`)
+
+        .setFooter({ text: `👋 Cast your goobyes`})
+
+        .setTimestamp()
+
+        .setAuthor({ name: `👋 Member Left`})
+
+        .setThumbnail(config.avatarURL)
+
+        const welmsg = await channelwelcome.send({ embeds: [embedleave]}).catch(err);
+
+        welmsg.react('👋');
+
+    }
+
+})
+
+// Welcome Message //
+const welcomeschema = require('./Schemas/welcome')
+const roleschema = require('./Schemas/autorole')
+
+client.on(Events.GuildMemberAdd, async (member, err) => {
+
+    const welcomedata = await welcomeschema.findOne({ Guild: member.guild.id });
+
+    if (!welcomedata) return;
+
+    else {
+
+        const channelID = welcomedata.Channel;
+
+        const channelwelcome = member.guild.channels.cache.get(channelID)
+
+        const roledata = await roleschema.findOne({ Guild: member.guild.id });
+
+        if (roledata) {
+
+            const giverole = await member.guild.roles.cache.get(roledata.Role)
+
+            member.roles.add(giverole).catch(err => {
+
+                console.log('Error received trying to give an auto role!');
+
+            })
+
+        }
+
+        
+
+        const embedwelcome = new EmbedBuilder()
+
+         .setColor("DarkBlue")
+
+         .setTitle(`${member.user.username} has arrived\nto the Server!`)
+
+         .setDescription( `> Welcome ${member} to the Sevrer!`)
+
+         .setFooter({ text: `👋 Get cozy and enjoy :)`})
+
+         .setTimestamp()
+
+         .setAuthor({ name: `👋 Welcome to the Server!`})
+
+         .setThumbnail(config.avatarURL)
+
+    
+
+        const embedwelcomedm = new EmbedBuilder()
+
+         .setColor("DarkBlue")
+
+         .setTitle('Welcome Message')
+
+         .setDescription( `> Welcome to ${member.guild.name}!`)
+
+         .setFooter({ text: `👋 Get cozy and enjoy :)`})
+
+         .setTimestamp()
+
+         .setAuthor({ name: `👋 Welcome to the Server!`})
+
+         .setThumbnail(config.avatarURL)
+
+    
+
+        const levmsg = await channelwelcome.send({ embeds: [embedwelcome]});
+
+        levmsg.react('👋');
+
+        member.send({ embeds: [embedwelcomedm]}).catch(err => console.log(`Welcome DM error: ${err}`))
+
+    
+
+    } 
+
+})
