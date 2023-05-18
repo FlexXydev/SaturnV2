@@ -899,3 +899,11 @@ client.distube = new DisTube(client, {
 })
 
 module.exports = client;
+
+// When someone say Hi on a server it react
+
+client.on('messageCreate', message => {
+  if (message.content.match(/hey\b|hello\b|bonjour\b|heya\b|hi\b/i)) {
+    message.react('👋');
+  }
+});
