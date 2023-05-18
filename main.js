@@ -885,3 +885,17 @@ const memberId = member.id;
 
 await capschema.updateOne({ Guild: member.guild.id }, { $pull: { Verified: memberId }});
 }
+
+// Music System
+
+const { DisTube } = require('distube')
+const { SpotifyPlugin } = require('@distube/spotify')
+
+client.distube = new DisTube(client, {
+  emitNewSongOnly: true,
+  leaveOnFinish: true,
+  emitAddSongWhenCreatingQueue: false,
+  plugins: [ new SpotifyPlugin() ]
+})
+
+module.exports = client;
