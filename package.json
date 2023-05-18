@@ -10,26 +10,18 @@
   "license": "ISC",
   "dependencies": {
     "@colors/colors": "^1.5.0",
-<<<<<<< HEAD
     "@discordjs/voice": "^0.16.0",
-=======
->>>>>>> fc7065564f7872f0b361f34fabf48dddf56a3682
     "ascii-art": "^2.8.5",
     "axios": "^1.4.0",
+    "captcha-canvas": "^3.2.1",
     "discord-gamecord": "^4.4.0",
     "discord-html-transcripts": "^3.1.2",
     "discord.js": "^14.7.1",
-<<<<<<< HEAD
     "mathjs": "^11.8.0",
     "mongoose": "^6.8.3",
+    "openai": "^3.2.1",
     "quickchart-js": "^3.1.2",
     "translate-google": "^1.5.0",
-=======
-    "figlet": "^1.6.0",
-    "mathjs": "^11.8.0",
-    "mongoose": "^6.8.3",
-    "quickchart-js": "^3.1.2",
->>>>>>> fc7065564f7872f0b361f34fabf48dddf56a3682
     "wikijs": "^6.4.1"
   }
 }

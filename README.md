@@ -1,109 +1,63 @@
-# 🇬🇧・English
-## Saturn Commands
-This bot comes with over 20 commands to make your Discord experience even better! Here is a list of all the available commands:
+# Discord Bot Description
 
-・/invite-me - Invite this bot to your server.
+This is a French Discord bot that comes packed with features to make your server experience more enjoyable. Some of the main features of the bot are:
 
-・/games - Game Commands
+## Error Handling
 
-・/stats - Statistics of the discord bot
+The bot has an error handling system in place to make sure any issues are dealt with in a timely and efficient manner.
 
-・/avatar - Get anybody's Profile Picture / Banner.
+## Slash Commands
 
-・/bugreport - Report a bug to the bot developers
+The bot supports the use of slash commands for easy and intuitive interaction.
 
-・/calculator - A fast cui based mathematical expression calculator.
+## Music System
 
-・/gunfight - Challenge someone to a cowboy game.
+The bot has a music system that allows users to play, pause, resume, skip, and stop music, as well as adjust the volume and shuffle the playlist.
 
-・/hack - Hack the mentioned user. "it's fake so no worries."
+## Giveaway System
 
-・/help - Shows all the commands you can use.
+The bot has a giveaway system that allows server owners to create and manage giveaways.
 
-・/how - Calculates how much of specified topic you are.
+## Ticket System
 
-・/invites - Displays the number of invites for the specified user or the user who triggered the command
+The bot has a ticket system that allows users to create and manage support tickets.
 
-・/member-count - Get the server member count
+## Mongo DB
 
-・/meme - This command will send a meme!
+The bot uses MongoDB as a database to store information and data.
 
-・/ping - Pong! View the speed of the bot's response.
+## Over 30 Commands
 
-・/rickroll - Generates a rickroll link, it is trolling time!
+The bot has over 30 commands that cover a variety of categories including general, music, and moderation.
 
-・/serverinfo - Displays information about the ・server.
+## General Commands
 
-・/todo - Manage your current to-do list.
+・/avatar: Displays the user's avatar.
+・/help: Displays a list of all available commands.
+・/invite: Displays an invite link for the bot.
+・/stats: Displays bot stats.
+・/whois: Displays user information.
 
-・/mmr - mmr of valorant
+## Music Commands
 
-・/whois - Get information about an user
+・/music-back: Skips to the previous song in the playlist.
+・/music-clear: Clears the current playlist.
+・/music-loop: Toggles loop mode on or off.
+・/music-nowplaying: Displays information about the current song.
+・/music-pause: Pauses the current song.
+・/music-play: Adds a song or playlist to the queue.
+・/music-resume: Resumes the current song.
+・/music-shuffle: Shuffles the current playlist.
+・/music-skip: Skips the current song.
+・/music-stop: Stops playing music.
+・/music-volume: Changes the volume of the bot.
 
-・/ticket - A command to setup the ticket system.
+## Moderation Commands
 
-・/clear - Delete Messages in a channel
+・/clear: Deletes a specified number of messages in a channel.
+・/lock: Locks a channel.
+・/ping: Checks the bot's response time.
+・/unlock: Unlocks a channel.
+・And more features are coming soon!
 
-・/create-embed - Create an embed message
-
-・/kick - Kick a user from the discord server.
-
-・/lock - A command to lock a specific channel.
-
-・/mod-panel - Moderate a member.
-
-# 🇫🇷🇫・Français
-## Les commandes de Saturn
-
-Ce bot est fourni avec plus de 20 commandes pour rendre votre expérience sur Discord encore meilleure ! Voici une liste de toutes les commandes disponibles :
-
-・/invite-me - Invitez ce bot sur votre serveur.
-
-・/games - Commandes de jeu
-
-・/stats - Statistiques du bot Discord
-
-・/avatar - Obtenez la photo de profil ou la bannière de n'importe qui.
-
-・/bugreport - Signalez un bug aux développeurs du bot
-
-・/calculator - Une calculatrice d'expression mathématique rapide basée sur le CLI.
-
-・/gunfight - Défiez quelqu'un à un jeu de cowboy.
-
-・/hack - Piratez l'utilisateur mentionné. "C'est faux donc pas d'inquiétude."
-
-・/help - Affiche toutes les commandes que vous pouvez utiliser.
-
-・/how - Calcule combien de sujet spécifié vous êtes.
-
-・/invites - Affiche le nombre d'invitations pour l'utilisateur spécifié ou l'utilisateur qui a déclenché la 
-commande.
-
-・/member-count - Obtenez le nombre de membres du serveur
-
-・/meme - Cette commande enverra un meme !
-
-・/ping - Pong! Affichez la vitesse de réponse du bot.
-
-・/rickroll - Génère un lien de rickroll, c'est l'heure de la blague !
-
-・/serverinfo - Affiche des informations sur le serveur.
-
-・/todo - Gérez votre liste de tâches en cours.
-
-・/mmr - mmr de valorant
-
-・/whois - Obtenez des informations sur un utilisateur
-
-・/ticket - Une commande pour configurer le système de billetterie.
-
-・/clear - Supprime les messages dans un canal
-
-・/create-embed - Crée un message intégré
-
-・/kick - Expulse un utilisateur du serveur Discord.
-
-・/lock - Verrouille un canal spécifique.
-
-・/mod-panel - Modère un membre.
+Thank you for choosing this bot for your server !

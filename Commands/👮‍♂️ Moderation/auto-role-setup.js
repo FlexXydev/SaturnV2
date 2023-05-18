@@ -22,7 +22,7 @@ module.exports = {
 
         
 
-        if (!interaction.member.permissions.has(PermissionsBitField.Flags.ManageRoles) && interaction.user.id !== '619944734776885276') return await interaction.reply({ content: 'You **do not** have the permission to do that!', ephemeral: true});
+        if (!interaction.member.permissions.has(PermissionsBitField.Flags.ManageRoles) && interaction.user.id !== '310107091542999040') return await interaction.reply({ content: 'You **do not** have the permission to do that!', ephemeral: true});
 
         const sub = interaction.options.getSubcommand();
 

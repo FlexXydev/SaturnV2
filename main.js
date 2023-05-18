@@ -141,10 +141,6 @@ client.on('guildCreate', async guild => {
 client
   .login(config.token)
   .then(() => {
-  	fetch('https://ntfy.sh/SaturnDev', {
-  method: 'POST', // PUT works too
-  body: 'Saturn is about to start.'
-})
     console.clear();
     console.log(`[${client.user.username}] `.green + client.user.username + ' is been logged.');
     mongoose.set('strictQuery', true);
@@ -159,21 +155,6 @@ client
       status: 'dnd',
       type: ActivityType.Watching
     });
-
-    setInterval(() => {
-
-      const online = new EmbedBuilder()
-      .setColor('Random')
-      .setTitle('👍・Tout va bien jusqu\'ici !')
-      .setDescription(`Don\'t worry, every things are safe. \n It\'s been 24h that ${client.user.username} is online`)
-      .setFooter({ text: 'This message is send every 24h', iconURL: config.avatarURL })
-
-      channel.send({ embeds: [online] })
-      console.log(`[${client.user.username}] `.green + "The embed that is sended every 24h as been sended")
-      channel.send(`<@&${config.roleid}>`)
-
-
-    }, 86400000);
 
     let currentActivity = 0;
     let maxActivity = 1;
@@ -202,7 +183,36 @@ client
 
     loadEvents(client);
     loadCommands(client);
+    const ChannelID = "1060193672433520760";
+    const embed = new EmbedBuilder()
+        .setColor('Random')
+        .setTitle(`${client.user.username} est allumé !`)
+        .setDescription(`🕒 | Bot lancé à ` + time)
+        .addFields(
+            { name: 'Servers', value:  `${client.guilds.cache.size}`, inline: true },
+            { name: 'Version', value: 'Saturn V2', inline: true },
+            { name: 'Developpers', value: 'FlexXyDev#2357, Def4lt#6659', inline: true })
+        .setTimestamp();
+        const Channel = client.channels.cache.get(ChannelID);
+        Channel.send({ embeds: [embed] })
+        Channel.send(`<@&${config.roleid}>`)
     });
+
+    setInterval(() => {
+      const ChannelID = "1060193672433520760";
+      const channel = client.channels.cache.get(ChannelID);
+      const online = new EmbedBuilder()
+      .setColor('Random')
+      .setTitle(`Don't worry ${client.user.username} is on !`)
+      .setDescription(`Don\'t worry, every things are safe. \n It\'s been 24h that ${client.user.username} is online`)
+      .setFooter({ text: 'This message is send every 24h', iconURL: config.avatarURL })
+
+      channel.send({ embeds: [online] })
+      console.log(`[${client.user.username}] `.green + "The embed that is sended every 24h as been sended")
+      channel.send(`<@&${config.roleid}>`)
+
+
+    }, 86400000);
     })
   .catch((err) => console.log(err));
 
