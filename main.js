@@ -156,30 +156,34 @@ client
       type: ActivityType.Watching
     });
 
-    let currentActivity = 0;
-    let maxActivity = 1;
+    setInterval(() => {
 
-    setInterval(async () => {
-      currentActivity++;
-      if (currentActivity > maxActivity) { currentActivity = 0; }
-      switch(currentActivity) {
-        case 0:
-          console.log(`[${client.user.username}] `.green + 'Activity changed to French')
-          client.user.setPresence({
-            activities: [{ name: config.activity1 }],
-            status: 'dnd',
-            type: ActivityType.Playing
-          })
-          case 1:
-            console.log(`[${client.user.username}] `.green + 'Activity changed to English')
-            client.user.setPresence({
-              activities: [{ name: config.activity2 }],
-              status: 'dnd',
-              type: ActivityType.Playing
-            });
-            break;
-      }
-    }, 30000);
+      let activities = [
+          { type: 'Playing', name: 'in the darkness.'},
+          { type: 'Playing', name: '/help manual.'},
+          { type: 'Playing', name: 'with my features.'},
+          { type: 'Listening', name: 'to all your vocal channels'},
+          { type: 'Watching', name: 'FlexXyDEVVVVVVV'},
+          { type: 'Watching', name: 'your text channels'},
+          { type: 'Watching', name: `${client.guilds.cache.size} servers !`},
+          { type: 'Watching', name: `${client.guilds.cache.reduce((a,b) => a+b.memberCount, 0)} members !`},
+          { type: 'Playing', name: `with my ${client.commands.size} commands.`}
+      ];
+
+      const status = activities[Math.floor(Math.random() * activities.length)];
+
+      if (status.type === 'Watching') {
+          console.log(`[${client.user.username}] `.green + `Activity changed to ${status.name} with type ${status.type}`);
+          client.user.setPresence({ activities: [{ name: `${status.name}`, type: ActivityType.Watching }]});
+      } if (status.type === 'Playing') {
+          console.log(`[${client.user.username}] `.green + `Activity changed to ${status.name} with type ${status.type}`);
+          client.user.setPresence({ activities: [{ name: `${status.name}`, type: ActivityType.Playing }]});
+      } if (status.type === 'Listening') {
+        console.log(`[${client.user.username}] `.green + `Activity changed to ${status.name} with type ${status.type}`);
+        client.user.setPresence({ activities: [{ name: `${status.name}`, type: ActivityType.Listening }]});
+    }
+      
+  }, 9000);
 
     loadEvents(client);
     loadCommands(client);
@@ -905,5 +909,27 @@ module.exports = client;
 client.on('messageCreate', message => {
   if (message.content.match(/hey\b|hello\b|bonjour\b|heya\b|hi\b/i)) {
     message.react('👋');
+  }
+});
+
+// For someone request
+
+client.on('messageCreate', message => {
+  if (message.content.match('c\'est quoi la voiture de ronantml')) {
+    message.reply('c\'est les Renault bien sur');
+  }
+});
+
+// Easter EGGSSS
+
+client.on('messageCreate', message => {
+  if (message.content.match('Satourne qui tourne autour de Saturne')) {
+    message.reply(':middle_finger:');
+  }
+});
+
+client.on('messageCreate', message => {
+  if (message.content.match('Never gonna give you up')) {
+    message.reply('Never gonna let you down');
   }
 });
