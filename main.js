@@ -2,18 +2,114 @@ const Discord = require('discord.js');
 const client = new Discord.Client({intents: 3276799});
 const config = require('./config');
 const { connect, mongoose } = require('mongoose');
-const { ActivityType, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, Events } = require('discord.js');
+const { ActivityType, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, Events, AttachmentBuilder, ModalBuilder, TextInputBuilder, TextInputStyle } = require('discord.js');
 const { loadEvents } = require('./Handlers/eventHandler');
 const { loadCommands } = require('./Handlers/commandHandler');
 const now = new Date();
 const time = now.toLocaleTimeString("fr-FR")
+const { CaptchaGenerator } = require('captcha-canvas');
 require('@colors/colors');
 client.commands = new Discord.Collection();
 client.buttons = new Discord.Collection();
 client.selectMenus = new Discord.Collection();
 client.modals = new Discord.Collection();
 
+// Error Handler
 
+client.on("error", (err) => {
+  const ChannelID = "1060193672433520760";
+  console.log("Discord API Error:", err);
+  const Embed = new EmbedBuilder()
+    .setColor("Aqua")
+    .setTimestamp()
+    .setFooter({ text: "⚠️ Anti Crash system" })
+    .setTitle("Error Encountered");
+  const Channel = client.channels.cache.get(ChannelID);
+  if (!Channel) return;
+  Channel.send({
+    embeds: [
+      Embed.setDescription(
+        "**Discord API Error/Catch:\n\n** ```" + err + "```"
+      ),
+    ],
+  });
+});
+
+process.on("unhandledRejection", (reason, p) => {
+  const ChannelID = "1060193672433520760";
+  console.log("Unhandled promise rejection:", reason, p);
+  const Embed = new EmbedBuilder()
+    .setColor("Aqua")
+    .setTimestamp()
+    .setFooter({ text: "⚠️ Anti Crash system" })
+    .setTitle("Error Encountered");
+  const Channel = client.channels.cache.get(ChannelID);
+  if (!Channel) return;
+  Channel.send({
+    embeds: [
+      Embed.setDescription(
+        "**Unhandled Rejection/Catch:\n\n** ```" + reason + "```"
+      ),
+    ],
+  });
+});
+
+process.on("uncaughtException", (err, origin) => {
+  const ChannelID = "1060193672433520760";
+  console.log("Uncaught Exception:", err, origin);
+  const Embed = new EmbedBuilder()
+    .setColor("Aqua")
+    .setTimestamp()
+    .setFooter({ text: "⚠️ Anti Crash system" })
+    .setTitle("Error Encountered");
+  const Channel = client.channels.cache.get(ChannelID);
+  if (!Channel) return;
+  Channel.send({
+    embeds: [
+      Embed.setDescription(
+        "**Uncought Exception/Catch:\n\n** ```" + err + "```"
+      ),
+    ],
+  });
+});
+
+process.on("uncaughtExceptionMonitor", (err, origin) => {
+  const ChannelID = "1060193672433520760";
+  console.log("Uncaught Exception Monitor:", err, origin);
+  const Embed = new EmbedBuilder()
+    .setColor("Aqua")
+    .setTimestamp()
+    .setFooter({ text: "⚠️ Anti Crash system" })
+    .setTitle("Error Encountered");
+  const Channel = client.channels.cache.get(ChannelID);
+  if (!Channel) return;
+  Channel.send({
+    embeds: [
+      Embed.setDescription(
+        "**Uncaught Exception Monitor/Catch:\n\n** ```" + err + "```"
+      ),
+    ],
+  });
+});
+
+process.on("warning", (warn) => {
+  const ChannelID = "1060193672433520760";
+  console.log("Warning:", warn);
+  const Embed = new EmbedBuilder()
+    .setColor("Aqua")
+    .setTimestamp()
+    .setFooter({ text: "⚠️ Anti Crash system" })
+    .setTitle("Error Encountered");
+  const Channel = client.channels.cache.get(ChannelID);
+  if (!Channel) return;
+  Channel.send({
+    embeds: [
+      Embed.setDescription(
+        "**Warning/Catch:\n\n** ```" + warn + "```"
+      ),
+    ],
+  });
+});
 
 // When the bot join a guild
 
@@ -32,11 +128,7 @@ client.on('guildCreate', async guild => {
         new ButtonBuilder()
           .setStyle(ButtonStyle.Link)
           .setLabel('Support Server')
-<<<<<<< HEAD
           // In the url put your support server
-=======
-          // In the url put your support server !
->>>>>>> fc7065564f7872f0b361f34fabf48dddf56a3682
           .setURL('https://discord.gg/ndJyxZs3sF')
       );
     owner.send({ embeds: [embed], components: [row] });
@@ -57,12 +149,11 @@ client
     console.log(`[${client.user.username}] `.green + client.user.username + ' is been logged.');
     mongoose.set('strictQuery', true);
     connect(config.database, {
-    }).then(() => {
+    }).then(() => {	
     console.log('[MongoDB API] '.green + 'is now connected.')
     console.log(`[${client.user.username}] `.green + `${client.user.username} is on ${client.guilds.cache.size}`)
     console.log(`[${client.user.username}] `.green + `${client.user.username} was started at ${time}`)
     console.log(`[${client.user.username}] `.green + 'Activity are loading ! Launch of temporary status')
-    require('./error')
     client.user.setPresence({
       activities: [{ name: config.status }],
       status: 'dnd',
@@ -231,4 +322,520 @@ client.on(Events.GuildMemberAdd, async (member, err) => {
 
     } 
 
+})
+
+// Member Voice Channels Code //
+
+const voiceschema = require('./Schemas/voicechannels')
+ 
+client.on(Events.GuildMemberAdd, async (member, err) => {
+ 
+    if (member.guild === null) return;
+    const voicedata = await voiceschema.findOne({ Guild: member.guild.id });
+ 
+    if (!voicedata) return;
+    else {
+ 
+        const totalvoicechannel = member.guild.channels.cache.get(voicedata.TotalChannel);
+        if (!totalvoicechannel || totalvoicechannel === null) return;
+        const totalmembers = member.guild.memberCount;
+        const TotalChannelName = voicedata.ChannelName
+ 
+        totalvoicechannel.setName(`${TotalChannelName} ${totalmembers}`).catch(err);
+ 
+    }
+})
+ 
+client.on(Events.GuildMemberRemove, async (member, err) => {
+ 
+    if (member.guild === null) return;
+    const voicedata1 = await voiceschema.findOne({ Guild: member.guild.id });
+ 
+    if (!voicedata1) return;
+    else {
+ 
+        const totalvoicechannel1 = member.guild.channels.cache.get(voicedata1.TotalChannel);
+        if (!totalvoicechannel1 || totalvoicechannel1 === null) return;
+        const totalmembers1 = member.guild.memberCount;
+        const TotalChannelName1 = voicedata1.ChannelName
+ 
+        totalvoicechannel1.setName(`${TotalChannelName1} ${totalmembers1}`).catch(err);
+ 
+    }
+})
+
+// Total Bots Voice Channel Code //
+ 
+const botschema = require('./Schemas/botsvoicechannels')
+
+client.on(Events.GuildMemberAdd, async (member, err) => {
+ 
+    if (member.guild === null) return;
+    const botdata = await botschema.findOne({ Guild: member.guild.id });
+ 
+    if (!botdata) return;
+    else {
+ 
+        const botvoicechannel = member.guild.channels.cache.get(botdata.BotChannel);
+        if (!botvoicechannel || botvoicechannel === null) return;
+        const botslist = member.guild.members.cache.filter(member => member.user.bot).size;
+ 		const BotChannelName1 = botdata.ChannelName
+        
+        botvoicechannel.setName(`${BotChannelName1} ${botslist}`).catch(err);
+ 
+    }
+})
+ 
+client.on(Events.GuildMemberRemove, async (member, err) => {
+ 
+    if (member.guild === null) return;
+    const botdata1 = await botschema.findOne({ Guild: member.guild.id });
+ 
+    if (!botdata1) return;
+    else {
+ 
+        const botvoicechannel1 = member.guild.channels.cache.get(botdata1.BotChannel);
+        const BotChannelName = botdata1.ChannelName
+        if (!botvoicechannel1 || botvoicechannel1 === null) return;
+        const botslist1 = member.guild.members.cache.filter(member => member.user.bot).size;
+ 
+        botvoicechannel1.setName(`${BotChannelName} ${botslist1}`).catch(err);
+ 
+    }
+})
+
+// POLL SYSTEM //
+
+const pollschema = require('./Schemas/votes');
+
+const pollsetup = require('./Schemas/votesetup');
+
+client.on(Events.MessageCreate, async message => {
+
+    if (!message.guild) return;
+
+    const setupdata = await pollsetup.findOne({ Guild: message.guild.id });
+
+    if (!setupdata) return;
+
+    if (message.channel.id !== setupdata.Channel) return;
+
+    if (message.author.bot) return;
+
+    const embed = new EmbedBuilder()
+
+    .setColor("#ecb6d3")
+
+    .setThumbnail(config.avatarURl)
+
+    .setAuthor({ name: `🤚 Poll System`})
+
+    .setFooter({ text: `🤚 Poll Started`})
+
+    .setTimestamp()
+
+    .setTitle('• Poll Began')
+
+    .setDescription(`> ${message.content}`)
+
+    .addFields({ name: `• Upvotes`, value: `> **No votes**`, inline: true})
+
+    .addFields({ name: `• Downvotes`, value: `> **No votes**`, inline: true})
+
+    .addFields({ name: `• Author`, value: `> ${message.author}`})
+
+    try {
+
+        await message.delete();
+
+    } catch (err) {
+
+    }
+
+    const buttons = new ActionRowBuilder()
+
+    .addComponents(
+
+        new ButtonBuilder()
+
+        .setCustomId('up')
+
+        .setLabel(' ')
+
+        .setEmoji('<:tick:1102942811101335593>')
+
+        .setStyle(ButtonStyle.Secondary),
+
+        new ButtonBuilder()
+
+        .setCustomId('down')
+
+        .setLabel(' ')
+
+        .setEmoji('<:crossmark:1102943024415260673>')
+
+        .setStyle(ButtonStyle.Secondary),
+
+        new ButtonBuilder()
+
+        .setCustomId('votes')
+
+        .setLabel('• Votes')
+
+        .setStyle(ButtonStyle.Secondary)
+
+    )
+
+    const msg = await message.channel.send({ embeds: [embed], components: [buttons] });
+
+    msg.createMessageComponentCollector();
+
+    await pollschema.create({
+
+        Msg: msg.id,
+
+        Upvote: 0,
+
+        Downvote: 0,
+
+        UpMembers: [],
+
+        DownMembers: [],
+
+        Guild: message.guild.id,
+
+        Owner: message.author.id
+
+    })
+
+})
+
+client.on(Events.InteractionCreate, async i => {
+
+    if (!i.guild) return;
+
+    if (!i.message) return;
+
+    const data = await pollschema.findOne({ Guild: i.guild.id, Msg: i.message.id });
+
+    const msg = await i.channel.messages.fetch(data.Msg)
+
+        if (i.customId === 'up') {
+
+            if (i.user.id === data.Owner) return await i.reply({ content: `❌ You **cannot** upvote your own **poll**!`, ephemeral: true });
+
+            if (data.UpMembers.includes(i.user.id)) return await i.reply({ content: `❌ You have **already** upvoted this **poll**`, ephemeral: true});
+
+            let downvotes = data.Downvote;
+
+            if (data.DownMembers.includes(i.user.id)) {
+
+                downvotes = downvotes - 1;
+
+            }
+
+            const newembed = EmbedBuilder.from(msg.embeds[0]).setFields({ name: `• Upvotes`, value: `> **${data.Upvote + 1}** Votes`, inline: true}, { name: `• Downvotes`, value: `> **${downvotes}** Votes`, inline: true}, { name: `• Author`, value: `> <@${data.Owner}>`});
+
+            const buttons = new ActionRowBuilder()
+
+            .addComponents(
+
+                new ButtonBuilder()
+
+                .setCustomId('up')
+
+                .setEmoji('<:tick:1102942811101335593>')
+
+                .setLabel(`${data.Upvote + 1}`)
+
+                .setStyle(ButtonStyle.Secondary),
+
+                new ButtonBuilder()
+
+                .setCustomId('down')
+
+                .setEmoji('<:crossmark:1102943024415260673>')
+
+                .setLabel(`${downvotes}`)
+
+                .setStyle(ButtonStyle.Secondary),
+
+                new ButtonBuilder()
+
+                .setCustomId('votes')
+
+                .setLabel('• Votes')
+
+                .setStyle(ButtonStyle.Secondary)
+
+            )
+
+            await i.update({ embeds: [newembed], components: [buttons] })
+
+            data.Upvote++
+
+            if (data.DownMembers.includes(i.user.id)) {
+
+                data.Downvote = data.Downvote - 1;
+
+            }
+
+            data.UpMembers.push(i.user.id)
+
+            data.DownMembers.pull(i.user.id)
+
+            data.save();
+
+            
+
+        }
+
+        if (i.customId === 'down') {
+
+            if (i.user.id === data.Owner) return await i.reply({ content: `❌ You **cannot** downvote your own **poll**!`, ephemeral: true });
+
+            if (data.DownMembers.includes(i.user.id)) return await i.reply({ content: `❌ You have **already** downvoted this **poll**`, ephemeral: true});
+
+            let upvotes = data.Upvote;
+
+            if (data.UpMembers.includes(i.user.id)) {
+
+                upvotes = upvotes - 1;
+
+            }
+
+            const newembed = EmbedBuilder.from(msg.embeds[0]).setFields({ name: `• Upvotes`, value: `> **${upvotes}** Votes`, inline: true}, { name: `• Downvotes`, value: `> **${data.Downvote + 1}** Votes`, inline: true}, { name: `• Author`, value: `> <@${data.Owner}>`});
+
+            const buttons = new ActionRowBuilder()
+
+            .addComponents(
+
+                new ButtonBuilder()
+
+                .setCustomId('up')
+
+                .setEmoji('<:tick:1102942811101335593>')
+
+                .setLabel(`${upvotes}`)
+
+                .setStyle(ButtonStyle.Secondary),
+
+                new ButtonBuilder()
+
+                .setCustomId('down')
+
+                .setEmoji('<:crossmark:1102943024415260673>')
+
+                .setLabel(`${data.Downvote + 1}`)
+
+                .setStyle(ButtonStyle.Secondary),
+
+                new ButtonBuilder()
+
+                .setCustomId('votes')
+
+                .setLabel('• Votes')
+
+                .setStyle(ButtonStyle.Secondary)
+
+            )
+
+            await i.update({ embeds: [newembed], components: [buttons] })
+
+            data.Downvote++
+
+            if (data.UpMembers.includes(i.user.id)) {
+
+                data.Upvote = data.Upvote - 1;
+
+            }
+
+            data.DownMembers.push(i.user.id);
+
+            data.UpMembers.pull(i.user.id);
+
+            data.save();
+
+            
+
+        }
+
+        if (i.customId === 'votes') {
+
+            let upvoters = [];
+
+            await data.UpMembers.forEach(async member => {
+
+                upvoters.push(`<@${member}>`)
+
+            })
+
+            let downvoters = [];
+
+            await data.DownMembers.forEach(async member => {
+
+                downvoters.push(`<@${member}>`)
+
+            })
+
+            const embed = new EmbedBuilder()
+
+            .setTitle('> Poll Votes')
+
+            .setColor("#ecb6d3")
+
+            .setThumbnail(config.avatarURL)
+
+            .setAuthor({ name: `🤚 Poll System`})
+
+            .setFooter({ text: `🤚 Poll Members`})
+
+            .setTimestamp()
+
+            .addFields({ name: `• Upvoters (${upvoters.length})`, value: `> ${upvoters.join(', ').slice(0, 1020) || 'No upvoters'}`, inline: true})
+
+            .addFields({ name: `• Downvoters (${downvoters.length})`, value: `> ${downvoters.join(', ').slice(0, 1020) || 'No downvoters'}`, inline: true})
+
+            await i.reply({ embeds: [embed], ephemeral: true })
+
+        }
+
+})
+
+const capschema = require('./Schemas/verify');
+const verifyusers = require('./Schemas/verifyusers');
+
+client.on(Events.InteractionCreate, async interaction => {
+
+    if (interaction.guild === null) return;
+
+    const verifydata = await capschema.findOne({ Guild: interaction.guild.id });
+    const verifyusersdata = await verifyusers.findOne({ Guild: interaction.guild.id, User: interaction.user.id });
+
+    if (interaction.customId === 'verify') {
+
+        if (!verifydata) return await interaction.reply({ content: `The **verification system** has been disabled in this server!`, ephemeral: true});
+
+        if (verifydata.Verified.includes(interaction.user.id)) return await interaction.reply({ content: 'You have **already** been verified!', ephemeral: true})
+        else {
+
+            let letter = ['0','1','2','3','4','5','6','7','8','9','a','A','b','B','c','C','d','D','e','E','f','F','g','G','h','H','i','I','j','J','f','F','l','L','m','M','n','N','o','O','p','P','q','Q','r','R','s','S','t','T','u','U','v','V','w','W','x','X','y','Y','z','Z',]
+            let result = Math.floor(Math.random() * letter.length);
+            let result2 = Math.floor(Math.random() * letter.length);
+            let result3 = Math.floor(Math.random() * letter.length);
+            let result4 = Math.floor(Math.random() * letter.length);
+            let result5 = Math.floor(Math.random() * letter.length);
+
+            const cap = letter[result] + letter[result2] + letter[result3] + letter[result4] + letter[result5];
+            console.log(cap)
+
+            const captcha = new CaptchaGenerator()
+            .setDimension(150, 450)
+            .setCaptcha({ text: `${cap}`, size: 60, color: "red"})
+            .setDecoy({ opacity: 0.5 })
+            .setTrace({ color: "red" })
+
+            const buffer = captcha.generateSync();
+            
+            const verifyattachment = new AttachmentBuilder(buffer, { name: `captcha.png`});
+            
+            const verifyembed = new EmbedBuilder()
+            .setColor('Green')
+            .setAuthor({ name: `✅ Verification Proccess`})
+            .setFooter({ text: `✅ Verification Captcha`})
+            .setTimestamp()
+            .setImage('attachment://captcha.png')
+            .setThumbnail(config.avatarURL)
+            .setTitle('> Verification Step: Captcha')
+            .addFields({ name: `• Verify`, value: '> Please use the button bellow to \n> submit your captcha!'})
+
+            const verifybutton = new ActionRowBuilder()
+            .addComponents(
+                new ButtonBuilder()
+                .setLabel('✅ Enter Captcha')
+                .setStyle(ButtonStyle.Success)
+                .setCustomId('captchaenter')
+            )
+
+            const vermodal = new ModalBuilder()
+            .setTitle('Verification')
+            .setCustomId('vermodal')
+
+            const answer = new TextInputBuilder()
+            .setCustomId('answer')
+            .setRequired(true)
+            .setLabel('• Please sumbit your Captcha code')
+            .setPlaceholder('Your captcha code')
+            .setStyle(TextInputStyle.Short)
+
+            const vermodalrow = new ActionRowBuilder().addComponents(answer);
+            vermodal.addComponents(vermodalrow);
+
+            const vermsg = await interaction.reply({ embeds: [verifyembed], components: [verifybutton], ephemeral: true, files: [verifyattachment] });
+
+            const vercollector = vermsg.createMessageComponentCollector();
+
+            vercollector.on('collect', async i => {
+
+                if (i.customId === 'captchaenter') {
+                    i.showModal(vermodal);
+                }
+
+            })
+
+            if (verifyusersdata) {
+
+                await verifyusers.deleteMany({
+                    Guild: interaction.guild.id,
+                    User: interaction.user.id
+                })
+
+                await verifyusers.create ({
+                    Guild: interaction.guild.id,
+                    User: interaction.user.id,
+                    Key: cap
+                })
+
+            } else {
+
+                await verifyusers.create ({
+                    Guild: interaction.guild.id,
+                    User: interaction.user.id,
+                    Key: cap
+                })
+
+            }
+        } 
+    }
+})
+
+client.on(Events.InteractionCreate, async interaction => {
+
+    if (!interaction.isModalSubmit()) return;
+
+    if (interaction.customId === 'vermodal') {
+
+        const userverdata = await verifyusers.findOne({ Guild: interaction.guild.id, User: interaction.user.id });
+        const verificationdata = await capschema.findOne({ Guild: interaction.guild.id });
+
+        if (verificationdata.Verified.includes(interaction.user.id)) return await interaction.reply({ content: `You have **already** verified within this server!`, ephemeral: true});
+        
+        const modalanswer = interaction.fields.getTextInputValue('answer');
+        if (modalanswer === userverdata.Key) {
+
+            const verrole = await interaction.guild.roles.cache.get(verificationdata.Role);
+
+            try {
+                await interaction.member.roles.add(verrole);
+            } catch (err) {
+                return await interaction.reply({ content: `There was an **issue** giving you the **<@&${verificationdata.Role}>** role, try again later!`, ephemeral: true})
+            }
+
+            await interaction.reply({ content: 'You have been **verified!**', ephemeral: true});
+            await capschema.updateOne({ Guild: interaction.guild.id }, { $push: { Verified: interaction.user.id }});
+
+        } else {
+            await interaction.reply({ content: `**Oops!** It looks like you **didn't** enter the valid **captcha code**!`, ephemeral: true})
+        }
+    }
 })
