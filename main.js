@@ -184,15 +184,37 @@ client
     loadEvents(client);
     loadCommands(client);
     const ChannelID = "1060193672433520760";
+    const icon = config.avatarURL
+    const totalMembers = client.guilds.cache.reduce((acc, guild) => acc + guild.memberCount, 0);
     const embed = new EmbedBuilder()
-        .setColor('Random')
-        .setTitle(`${client.user.username} est allumé !`)
-        .setDescription(`🕒 | Bot lancé à ` + time)
-        .addFields(
-            { name: 'Servers', value:  `${client.guilds.cache.size}`, inline: true },
-            { name: 'Version', value: 'Saturn V2', inline: true },
-            { name: 'Developpers', value: 'FlexXyDev#2357, Def4lt#6659', inline: true })
-        .setTimestamp();
+
+    .setColor("Purple")
+
+    .setThumbnail(`${icon}`)
+
+    .setDescription(`**${client.user.username}** is on !` )
+
+    .addFields({ name: "** **", value: `** **`, inline: false})
+
+    .addFields({ name: "🤖 Commands:", value: `${client.commands.size}`, inline: true})
+
+    .addFields({ name: "👨‍👩‍👧‍👦 Users:", value: `${totalMembers}`, inline: true})
+
+    .addFields({ name: "🌎 Servers:", value: `${client.guilds.cache.size}`, inline: true})
+
+    .addFields({ name: "💬 Channels:", value: `${client.channels.cache.size}`, inline: true})
+
+    .addFields({ name: "📅 Created:", value: `<t:${parseInt(client.user.createdTimestamp / 1000,10)}:R>`, inline: true})
+
+    .addFields({ name: "🏓 Ping", value: `${client.ws.ping}ms`, inline: true})
+
+    .addFields({ name: "⏰ Up Time", value: `<t:${parseInt(client.readyTimestamp / 1000,10)}:R>`, inline: true})
+
+    .addFields({ name: "💳 ID ", value: `${client.user.id}`, inline: true})
+
+    .addFields({ name: "💾 CPU Usage", value: `${(process.memoryUsage().heapUsed /1024 /1024).toFixed(2)}%`, inline: true})
+
+    .setFooter({ text: `${client.user.username} 2023` })
         const Channel = client.channels.cache.get(ChannelID);
         Channel.send({ embeds: [embed] })
         Channel.send(`<@&${config.roleid}>`)
@@ -849,3 +871,17 @@ client.on(Events.InteractionCreate, async interaction => {
         }
     }
 })
+
+client.on('guildMemberRemove', member => {
+   
+  removeUserData(member);
+});
+
+
+async function removeUserData(member) {
+
+const memberId = member.id;
+
+
+await capschema.updateOne({ Guild: member.guild.id }, { $pull: { Verified: memberId }});
+}

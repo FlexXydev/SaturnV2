@@ -1,7 +1,7 @@
 module.exports = {
     // Basic configuration
     token: 'MTA5MTA2MTM0NDIyNjI1NDg5OA.Gz4qjz.kBK2C0MnNEOMUZ5OrhABAvKU8-YHurkJ80ggb0', // Place here your token
-    database: 'mongodb+srv://root:root@saturnbot.v331ybb.mongodb.net/?retryWrites=true&w=majority', // Place here your MongoDB access
+    database: 'mongodb+srv://root:root@cluster0.lr3psac.mongodb.net/?retryWrites=true&w=majority', // Place here your MongoDB access
     avatarURL: 'https://cdn.discordapp.com/avatars/945224613057683516/8a4ed7eb2fad0f0cbf3c7ff2dc336969.webp',
     developperID: '310107091542999040', // Place your id here
 
