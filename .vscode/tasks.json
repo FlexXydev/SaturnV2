@@ -6,7 +6,13 @@
         {
             "label": "Git add command",
             "type": "shell",
-            "command": "git add .",
+            "command": "git add . && echo remember to commit",
+            "problemMatcher": []
+        },
+        {
+            "label": "push",
+            "type": "shell",
+            "command": "git push",
             "problemMatcher": []
         }
     ]
