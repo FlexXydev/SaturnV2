@@ -21,6 +21,7 @@
     "discord.js": "^14.7.1",
     "distube": "^4.0.4",
     "ffmpeg-static": "^4.4.1",
+    "figlet": "^1.6.0",
     "libsodium-wrappers": "^0.7.11",
     "mathjs": "^11.8.0",
     "mongoose": "^6.8.3",
