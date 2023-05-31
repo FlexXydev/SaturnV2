@@ -1982,8 +1982,26 @@ client.on('guildCreate', async (guild) => {
         .setTimestamp();
     
     await channel.send({ embeds: [embed] });
+
+    console.log(`[${client.user.username}] `.yellow + `${client.user.username} as joined the ${name} server with over ${memberCount} members !`);
+
+    const adminstatsSchemas = require('./Schemas/admin pannel/botstats')
+
+    const totalMembers = client.guilds.cache.reduce((acc, guild) => acc + guild.memberCount, 0);
+
+    await adminstatsSchemas.findOneAndUpdate(
+        {},
+        {
+          TotserverCount: client.guilds.cache.size,
+          totmemberCount: totalMembers
+        },
+        { upsert: true }
+      );
+
 });
+
 ///guild leave//
+
 client.on('guildDelete', async (guild) => {
     const channel = await client.channels.cache.get('1060193672433520760');
     const name = guild.name;
@@ -1999,4 +2017,20 @@ client.on('guildDelete', async (guild) => {
         .setTimestamp();
     
     await channel.send({ embeds: [embed] });
+
+    console.log(`[${client.user.username}] `.red + `${client.user.username} as lived the ${name} server !`);
+
+    const adminstatsSchemas = require('./Schemas/admin pannel/botstats')
+
+    const totalMembers = client.guilds.cache.reduce((acc, guild) => acc + guild.memberCount, 0);
+
+    await adminstatsSchemas.findOneAndUpdate(
+        {},
+        {
+          TotserverCount: client.guilds.cache.size,
+          totmemberCount: totalMembers
+        },
+        { upsert: true }
+      );
 });
+
