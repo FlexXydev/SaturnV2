@@ -29,9 +29,9 @@ module.exports = {
         }
 
         try {
-
+			embed.setColor("Green").setDescription("🎶 Request received.");
             client.distube.play(voiceChannel, query, { textChannel: channel, member: member });
-            return interaction.reply({ content: "🎶 Request received." });
+            return interaction.reply({ embeds: [embed], ephemeral: true });
 
         } catch (err) {
             console.log(err);

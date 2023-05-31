@@ -1,8 +1,10 @@
 const Discord = require('discord.js');
 const client = new Discord.Client({intents: 3276799});
+const ms = require("ms");
 const config = require('./config');
 const { connect, mongoose } = require('mongoose');
-const { ActivityType, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, Events, AttachmentBuilder, ModalBuilder, TextInputBuilder, TextInputStyle, ChannelType } = require('discord.js');
+const fs = require('fs');
+const { ActivityType, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, Events, AttachmentBuilder, ModalBuilder, TextInputBuilder, TextInputStyle, ChannelType, AuditLogEvent } = require('discord.js');
 const { loadEvents } = require('./Handlers/eventHandler');
 const { loadCommands } = require('./Handlers/commandHandler');
 const now = new Date();
@@ -14,11 +16,14 @@ client.buttons = new Discord.Collection();
 client.selectMenus = new Discord.Collection();
 client.modals = new Discord.Collection();
 
+
 // Error Handler
 
 client.on("error", (err) => {
   const ChannelID = "1060193672433520760";
   console.log("Discord API Error:", err);
+   const path = ('error.txt');
+  fs.appendFileSync(path, `${time} | Discord API Error: ${err}\n`);
   const Embed = new EmbedBuilder()
     .setColor("Aqua")
     .setTimestamp()
@@ -38,6 +43,8 @@ client.on("error", (err) => {
 process.on("unhandledRejection", (reason, p) => {
   const ChannelID = "1060193672433520760";
   console.log("Unhandled promise rejection:", reason, p);
+    const path = ('error.txt');
+    fs.appendFileSync(path, `${time} | Unhandled Rejection: ${reason}\n`);
   const Embed = new EmbedBuilder()
     .setColor("Aqua")
     .setTimestamp()
@@ -57,6 +64,8 @@ process.on("unhandledRejection", (reason, p) => {
 process.on("uncaughtException", (err, origin) => {
   const ChannelID = "1060193672433520760";
   console.log("Uncaught Exception:", err, origin);
+    const path = ('error.txt');
+    fs.appendFileSync(path, `${time} | Uncaught Exception: ${err}\n`);
   const Embed = new EmbedBuilder()
     .setColor("Aqua")
     .setTimestamp()
@@ -76,6 +85,8 @@ process.on("uncaughtException", (err, origin) => {
 process.on("uncaughtExceptionMonitor", (err, origin) => {
   const ChannelID = "1060193672433520760";
   console.log("Uncaught Exception Monitor:", err, origin);
+    const path = ('error.txt');
+    fs.appendFileSync(path, `${time} | Uncaught Exception Monitor: ${err}\n`);
   const Embed = new EmbedBuilder()
     .setColor("Aqua")
     .setTimestamp()
@@ -95,6 +106,8 @@ process.on("uncaughtExceptionMonitor", (err, origin) => {
 process.on("warning", (warn) => {
   const ChannelID = "1060193672433520760";
   console.log("Warning:", warn);
+    const path = ('error.txt');
+    fs.appendFileSync(path, `${time} | Uncaught Exception Monitor: ${err}\n`);
   const Embed = new EmbedBuilder()
     .setColor("Aqua")
     .setTimestamp()
@@ -1167,3 +1180,823 @@ client.on(Events.MessageCreate, async (message, err) => {
         data.save();
     }
 })
+
+// Anti link
+const linkSchema = require("./Schemas/antilink");
+const antilinkLogSchema = require("./Schemas/antilinkLogChannel");
+
+    /**
+     * @param {Client} client
+     */
+
+client.on(Events.MessageCreate, async (msg) => {
+         if (!msg.guild) return;
+        if (msg.author?.bot) return;
+
+        let requireDB = await linkSchema.findOne({ _id: msg.guild.id });
+        const data = await antilinkLogSchema.findOne({ Guild: msg.guild.id });
+
+        if (!requireDB) return;
+
+        if (requireDB.logs === false) return;
+
+        if (requireDB.logs === true) {
+
+            const memberPerms = data.Perms;
+
+            const user = msg.author;
+            const member = msg.guild.members.cache.get(user.id);
+
+            if (member.permissions.has(memberPerms)) return;
+
+            else {
+                const e = new EmbedBuilder()
+                    .setDescription(`:warning: | Links are not allowed in this server, ${user}.`)
+                    .setColor('Random');
+
+                const url =
+                    /((([(https)(http)]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/;
+                // Créditos pela regex: Tech Boy
+
+                setTimeout(async () => {
+                    if (url.test(msg) || msg.content.includes("discord.gg/")) {
+                        msg.channel
+                            .send({ embeds: [e] })
+                            .then((mg) => setTimeout(mg.delete.bind(mg), 10000));
+                        msg.delete();
+
+                        return;
+                    }
+                }, 2000); // Coloquei um limite de tempo pra evitar ratelimit
+
+                const logChannel = client.channels.cache.get(data.logChannel)
+
+                if (!logChannel) return;
+                else {
+                    const buttons = new ActionRowBuilder()
+                        .addComponents(
+                            new ButtonBuilder()
+                                .setLabel("Timeout")
+                                .setEmoji("🔨")
+                                .setCustomId("linktimeout")
+                                .setStyle(ButtonStyle.Secondary),
+                            new ButtonBuilder()
+                                .setLabel("Kick")
+                                .setEmoji("🛠️")
+                                .setCustomId("linkkick")
+                                .setStyle(ButtonStyle.Danger)
+                        );
+
+                    // For sending message to log channel.
+                    const text = await logChannel.send({
+                        embeds: [
+                            new EmbedBuilder()
+                                .setColor('Random')
+                                .setDescription(`<@${user.id}> has been warned for sending a link.\n\`\`\`${msg.content}\`\`\``)
+                                .setFooter({ text: `User ID: ${user.id}` })
+                                .setTimestamp()
+                        ],
+                        components: [buttons]
+                    });
+
+                    const col = await text.createMessageComponentCollector();
+
+                    col.on("collect", async (m) => {
+                        switch (m.customId) {
+                            case "linktimeout": {
+                                if (!m.member.permissions.has(PermissionFlagsBits.ModerateMembers))
+                                    return m.reply({
+                                        embeds: [
+                                            new EmbedBuilder()
+                                                .setColor('Random')
+                                                .setDescription(`:warning: | ${m.user.name} is missing the *moderate_members* permission, please try again after you gain this permission.`)
+                                        ],
+                                        ephemeral: true,
+                                    });
+
+                                if (!msg.member) {
+                                    return m.reply({
+                                        embeds: [
+                                            new EmbedBuilder()
+                                                .setDescription(`:warning: | The target specified has most likely left the server.`)
+                                                .setColor('Random')
+                                        ],
+                                        ephemeral: true,
+                                    });
+                                }
+
+                                m.reply({
+                                    embeds: [
+                                        new EmbedBuilder()
+                                            .setColor('Random')
+                                            .setDescription(`:white_check_mark: | ${msg.member} has been successfully timed out for 10 minutes.`)
+                                    ],
+                                    ephemeral: true,
+                                });
+
+                                const timeoutEmbed = new EmbedBuilder()
+                                    .setTitle("Timeout")
+                                    .setDescription(
+                                        `You have received a timeout from \`${msg.guild.name}\` for sending links.`
+                                    )
+                                    .setTimestamp()
+                                    .setColor('Random');
+
+                                msg.member
+                                    .send({
+                                        embeds: [timeoutEmbed],
+                                    })
+                                    .then(() => {
+                                        const time = ms("10m");
+                                        msg.member.timeout(time);
+                                    });
+                            }
+                                break;
+
+                            case "linkkick": {
+                                if (!m.member.permissions.has(PermissionFlagsBits.KickMembers))
+                                    return m.reply({
+                                        embeds: [
+                                            new EmbedBuilder()
+                                                .setColor('Random')
+                                                .setDescription(`:warning: | ${m.user.name} is missing the *kick_members* permission, please try again after you gain this permission.`)
+                                        ],
+                                        ephemeral: true,
+                                    });
+
+                                const kickEmbed = new EmbedBuilder()
+                                    .setTitle("Kicked")
+                                    .setDescription(
+                                        `:warning: | You have been kicked from \`${msg.guild.name}\` for sending links.`
+                                    )
+                                    .setTimestamp()
+                                    .setColor('Random');
+
+                                if (!msg.member) {
+                                    return m.reply({
+                                        embeds: [
+                                            new EmbedBuilder()
+                                                .setDescription(`:warning: | The target specified has most likely left the server.`)
+                                                .setColor('Random')
+                                        ],
+                                        ephemeral: true,
+                                    });
+                                }
+
+                                m.reply({
+                                    embeds: [
+                                        new EmbedBuilder()
+                                            .setColor('Random')
+                                            .setDescription(`:white_check_mark: | ${msg.member} has been successfully kicked from the server.`)
+                                    ],
+                                    ephemeral: true,
+                                });
+
+                                msg.member
+                                    .send({
+                                        embeds: [kickEmbed],
+                                    })
+                                    .then(() => {
+                                        msg.member.kick({ reason: "Sending links." });
+                                    });
+                            }
+                                break;
+                        }
+                    });
+                }
+            }
+        }
+    })
+
+// Mod logs //
+const Modlog = require('./Schemas/modlog');
+
+client.on(Events.ChannelCreate, async (channel) => {
+  const guildId = channel.guild.id;
+  const modlog = await Modlog.findOne({ guildId });
+
+  if (!modlog || !modlog.logChannelId) {
+    return; // if there's no log channel set up, return without sending any log message
+}
+
+  channel.guild.fetchAuditLogs({
+    type: AuditLogEvent.ChannelCreate,
+  })
+    .then(async (audit) => {
+      const { executor } = audit.entries.first();
+
+      const name = channel.name;
+      const id = channel.id;
+      let type = channel.type;
+
+      if (type == 0) type = 'Text'
+      if (type == 2) type = 'Voice'
+      if (type == 13) type = 'Stage'
+      if (type == 15) type = 'Form'
+      if (type == 4) type = 'Announcement'
+      if (type == 5) type = 'Category'
+
+      const mChannel = await channel.guild.channels.cache.get(modlog.logChannelId);
+
+      const embed = new EmbedBuilder()
+        .setColor('Red')
+        .setTitle('Channel Created')
+        .addFields({ name: 'Channel Name', value: `${name} (<#${id}>)`, inline: false })
+        .addFields({ name: 'Channel Type', value: `${type} `, inline: true })
+        .addFields({ name: 'Channel ID', value: `${id} `, inline: true })
+        .addFields({ name: 'Created By', value: `${executor.tag}`, inline: false })
+        .setTimestamp()
+        .setFooter({ text: 'Mod Logging ' });
+
+    mChannel.send({ embeds: [embed] })
+
+    })
+})
+
+client.on(Events.ChannelDelete, async channel => {
+    const Modlog = require('./Schemas/modlog');
+
+    const guildId = channel.guild.id;
+    const modlog = await Modlog.findOne({ guildId });
+
+    if (!modlog || !modlog.logChannelId) {
+        return; // if there's no log channel set up, return without sending any log message
+    }
+
+    channel.guild.fetchAuditLogs({
+        type: AuditLogEvent.ChannelDelete,
+    })
+    .then (async audit => {
+        const { executor } = audit.entries.first()
+
+        const name = channel.name;
+        const id = channel.id;
+        let type = channel.type;
+
+        if (type == 0) type = 'Text'
+        if (type == 2) type = 'Voice'
+        if (type == 13) type = 'Stage'
+        if (type == 15) type = 'Form'
+        if (type == 4) type = 'Announcement'
+        if (type == 5) type = 'Category'
+
+        const mChannel = await channel.guild.channels.cache.get(modlog.logChannelId);
+
+    const embed = new EmbedBuilder()
+    .setColor("Red")
+    .setTitle("Channel Deleted")
+    .addFields({ name: "Channel Name", value: `${name}`, inline: false})
+    .addFields({ name: "Channel Type", value: `${type} `, inline: true})
+    .addFields({ name: "Channel ID", value: `${id} `, inline: true})
+    .addFields({ name: "Deleted By", value: `${executor.tag}`, inline: false})
+    .setTimestamp()
+    .setFooter({ text: "Mod Logging"})
+
+    mChannel.send({ embeds: [embed] })
+
+     })
+})
+
+client.on(Events.GuildBanAdd, async member => {
+    const Modlog = require('./Schemas/modlog');
+
+    const guildId = member.guild.id;
+    const modlog = await Modlog.findOne({ guildId });
+
+    if (!modlog || !modlog.logChannelId) {
+        return; // if there's no log channel set up, return without sending any log message
+    }
+
+    member.guild.fetchAuditLogs({
+        type: AuditLogEvent.GuildBanAdd,
+    })
+    .then (async audit => {
+        const { executor } = audit.entries.first()
+
+        const name = member.user.username;
+        const id = member.user.id;
+ 
+   
+    const mChannel = await member.guild.channels.cache.get(modlog.logChannelId)
+
+    const embed = new EmbedBuilder()
+    .setColor("Red")
+    .setTitle("Member Banned")
+    .addFields({ name: "Member Name", value: `${name} (<@${id}>)`, inline: false})
+    .addFields({ name: "Member ID", value: `${id} `, inline: true})
+    .addFields({ name: "Banned By", value: `${executor.tag}`, inline: false})
+    .setTimestamp()
+    .setFooter({ text: "Mod Logging"})
+
+    mChannel.send({ embeds: [embed] })
+
+    })
+})
+
+client.on(Events.GuildBanRemove, async member => {
+    const Modlog = require('./Schemas/modlog');
+
+    const guildId = member.guild.id;
+    const modlog = await Modlog.findOne({ guildId });
+
+    if (!modlog || !modlog.logChannelId) {
+        return; // if there's no log channel set up, return without sending any log message
+    }
+
+    member.guild.fetchAuditLogs({
+        type: AuditLogEvent.GuildBanRemove,
+    })
+    .then (async audit => {
+        const { executor } = audit.entries.first()
+
+        const name = member.user.username;
+        const id = member.user.id;
+ 
+   
+    const mChannel = await member.guild.channels.cache.get(modlog.logChannelId)
+
+    const embed = new EmbedBuilder()
+    .setColor("Red")
+    .setTitle("Member Unbanned")
+    .addFields({ name: "Member Name", value: `${name} (<@${id}>)`, inline: false})
+    .addFields({ name: "Member ID", value: `${id} `, inline: true})
+    .addFields({ name: "Unbanned By", value: `${executor.tag}`, inline: false})
+    .setTimestamp()
+    .setFooter({ text: "Mod Logging"})
+
+    mChannel.send({ embeds: [embed] })
+
+    })
+})
+
+client.on(Events.MessageDelete, async (message) => {
+    const Modlog = require('./Schemas/modlog');
+
+    const guildId = message.guild.id;
+    const modlog = await Modlog.findOne({ guildId });
+
+    if (!modlog || !modlog.logChannelId) {
+        return; // if there's no log channel set up, return without sending any log message
+    }
+
+    message.guild.fetchAuditLogs({
+        type: AuditLogEvent.MessageDelete,
+    })
+    .then (async audit => {
+        const { executor } = audit.entries.first()
+
+        const mes = message.content;
+        
+        if (!mes) return
+
+        const mChannel = await message.guild.channels.cache.get(modlog.logChannelId)
+
+        const embed = new EmbedBuilder()
+        .setColor("Red")
+        .setTitle("Message Delete")
+        .addFields({ name: "Message Content", value: `\`\`\`${mes}\`\`\``, inline: false})
+        .addFields({ name: "Message Channel", value: `${message.channel} `, inline: true})
+        .addFields({ name: "Deleted By", value: `${executor.tag}`, inline: false})
+        .setTimestamp()
+        .setFooter({ text: "Mod Logging"})
+
+        mChannel.send({ embeds: [embed] })
+
+    })
+})
+
+client.on(Events.MessageUpdate, async (message, newMessage) => {
+    const Modlog = require('./Schemas/modlog');
+
+    const guildId = message.guild.id;
+    const modlog = await Modlog.findOne({ guildId });
+
+    if (!modlog || !modlog.logChannelId) {
+        return; // if there's no log channel set up, return without sending any log message
+    }
+
+    message.guild.fetchAuditLogs({
+        type: AuditLogEvent.MessageUpdate,
+    })
+    .then (async audit => {
+        const { executor } = audit.entries.first()
+
+        const mes = message.content;
+        
+        if (!mes) return
+
+    const mChannel = await message.guild.channels.cache.get(modlog.logChannelId)
+
+    const embed = new EmbedBuilder()
+    .setColor("Red")
+    .setTitle("Message Edited")
+    .addFields({ name: "Old Message", value: `\`\`\`${mes}\`\`\``, inline: false})
+    .addFields({ name: "New Message", value: `\`\`\`${newMessage}\`\`\``, inline: true})
+    .addFields({ name: "Edited By", value: `${executor.tag}`, inline: false})
+    .setTimestamp()
+    .setFooter({ text: "Mod Logging"})
+
+    mChannel.send({ embeds: [embed] })
+
+    })
+})
+
+client.on(Events.MessageBulkDelete, async messages => {
+    const Modlog = require('./Schemas/modlog');
+
+    const guildId = messages.first().guild.id;
+    const modlog = await Modlog.findOne({ guildId });
+
+    if (!modlog || !modlog.logChannelId) {
+        return; // if there's no log channel set up, return without sending any log message
+    }
+
+    messages.first().guild.fetchAuditLogs({
+        type: AuditLogEvent.MessageBulkDelete,
+    })
+    .then(async audit => {
+        const { executor } = audit.entries.first();
+
+        const mChannel = await messages.first().guild.channels.cache.get(modlog.logChannelId);
+
+        const embed = new EmbedBuilder()
+        .setColor("Red")
+        .setTitle("Message Bulk Delete")
+        .addFields({ name: "Message Channel", value: `${messages.first().channel} `, inline: true})
+        .addFields({ name: "Bulk Deleted By", value: `${executor.tag}`, inline: false})
+        .setTimestamp()
+        .setFooter({ text: "Mod Logging" });
+
+        mChannel.send({ embeds: [embed] });
+    });
+});
+
+client.on(Events.GuildRoleCreate, async role => {
+    const Modlog = require('./Schemas/modlog');
+
+    const guildId = role.guild.id;
+    const modlog = await Modlog.findOne({ guildId });
+
+    if (!modlog || !modlog.logChannelId) {
+        return; // if there's no log channel set up, return without sending any log message
+    }
+
+    role.guild.fetchAuditLogs({
+        type: AuditLogEvent.RoleCreate,
+    })
+    .then(async audit => {
+        const { executor } = audit.entries.first();
+
+        const mChannel = await role.guild.channels.cache.get(modlog.logChannelId);
+
+        const embed = new EmbedBuilder()
+        .setColor("Red")
+        .setTitle("Role Created")
+        .addFields({ name: "Role Name", value: `<@&${role.id}> `, inline: true})
+        .addFields({ name: "Role Created By", value: `${executor.tag}`, inline: false})
+        .setTimestamp()
+        .setFooter({ text: "Mod Logging" });
+
+        mChannel.send({ embeds: [embed] });
+    });
+});
+
+
+    
+
+client.on(Events.GuildRoleDelete, async role => {
+    const Modlog = require('./Schemas/modlog');
+
+    const guildId = role.guild.id;
+    const modlog = await Modlog.findOne({ guildId });
+
+    if (!modlog || !modlog.logChannelId) {
+        return; // if there's no log channel set up, return without sending any log message
+    }
+
+    role.guild.fetchAuditLogs({
+        type: AuditLogEvent.RoleDelete,
+    })
+    .then(async audit => {
+        const { executor } = audit.entries.first();
+
+        const mChannel = await role.guild.channels.cache.get(modlog.logChannelId);
+
+        const embed = new EmbedBuilder()
+        .setColor("Red")
+        .setTitle("Role Deleted")
+        .addFields({ name: "Role Name", value: `${role.name} (${role.id})`, inline: true})
+        .addFields({ name: "Role Deleted By", value: `${executor.tag}`, inline: false})
+        .setTimestamp()
+        .setFooter({ text: "Mod Logging" });
+
+        mChannel.send({ embeds: [embed] });
+    });
+});
+
+
+client.on(Events.GuildMemberAdd, async member => {
+    const Modlog = require('./Schemas/modlog');
+
+    const guildId = member.guild.id;
+    const modlog = await Modlog.findOne({ guildId });
+
+    if (!modlog || !modlog.logChannelId) {
+        return; // if there's no log channel set up, return without sending any log message
+    }
+
+    const mChannel = await member.guild.channels.cache.get(modlog.logChannelId);
+
+    const embed = new EmbedBuilder()
+        .setColor("Red")
+        .setTitle("Member Joined")
+        .addFields({ name: "Username", value: `${member.user.username}#${member.user.discriminator} (${member.user.id})`, inline: true})
+        .addFields({ name: "Joined At", value: `${member.joinedAt.toUTCString()}`, inline: true})
+        .setTimestamp()
+        .setFooter({ text: "Mod Logging" });
+
+    mChannel.send({ embeds: [embed] });
+});
+
+
+client.on(Events.GuildMemberRemove, async member => {
+    const Modlog = require('./Schemas/modlog');
+
+    const guildId = member.guild.id;
+    const modlog = await Modlog.findOne({ guildId });
+
+    if (!modlog || !modlog.logChannelId) {
+        return; // if there's no log channel set up, return without sending any log message
+    }
+
+    const mChannel = await member.guild.channels.cache.get(modlog.logChannelId);
+
+    const embed = new EmbedBuilder()
+        .setColor("Red")
+        .setTitle("Member Left")
+        .addFields({ name: "Username", value: `${member.user.username}#${member.user.discriminator} (${member.user.id})`, inline: true})
+        .addFields({ name: "Left At", value: `${new Date().toUTCString()}`, inline: true})
+        .setTimestamp()
+        .setFooter({ text: "Mod Logging" });
+
+    mChannel.send({ embeds: [embed] });
+});
+
+
+client.on(Events.GuildMemberUpdate, async (oldMember, newMember) => {
+    if (oldMember.nickname === newMember.nickname) {
+        return; // if the nickname hasn't changed, return without sending any log message
+    }
+
+    const Modlog = require('./Schemas/modlog');
+
+    const guildId = newMember.guild.id;
+    const modlog = await Modlog.findOne({ guildId });
+
+    if (!modlog || !modlog.logChannelId) {
+        return; // if there's no log channel set up, return without sending any log message
+    }
+
+    const mChannel = await newMember.guild.channels.cache.get(modlog.logChannelId);
+
+    const embed = new EmbedBuilder()
+        .setColor("Red")
+        .setTitle("Nickname Changed")
+        .addFields({ name: "Username", value: `${newMember.user.username}#${newMember.user.discriminator} (${newMember.user.id})`, inline: true })
+        .addFields({ name: "Old Nickname", value: `${oldMember.nickname ? oldMember.nickname : 'None'}`, inline: true })
+        .addFields({ name: "New Nickname", value: `${newMember.nickname ? newMember.nickname : 'None'}`, inline: true })
+        .setTimestamp()
+        .setFooter({ text: "Mod Logging" });
+
+    mChannel.send({ embeds: [embed] });
+});
+
+
+client.on(Events.UserUpdate, async (oldUser, newUser) => {
+    if (oldUser.username === newUser.username) {
+        return; // if the username hasn't changed, return without sending any log message
+    }
+
+    const Modlog = require('./Schemas/modlog');
+
+    const guildId = newUser.guild
+    ;
+    const modlog = await Modlog.findOne({ guildId });
+
+    if (!modlog || !modlog.logChannelId) {
+        return; // if there's no log channel set up, return without sending any log message
+    }
+
+    const mChannel = await newUser.guild.channels.cache.get(modlog.logChannelId);
+
+    const embed = new EmbedBuilder()
+        .setColor("Red")
+        .setTitle("Username Changed")
+        .addFields({ name: "User", value: `${newUser.username}#${newUser.discriminator} (${newUser.id})`, inline: true })
+        .addFields({ name: "Old Username", value: `${oldUser.username}`, inline: true })
+        .addFields({ name: "New Username", value: `${newUser.username}`, inline: true })
+        .setTimestamp()
+        .setFooter({ text: "Mod Logging" });
+
+    mChannel.send({ embeds: [embed] });
+});
+
+
+client.on(Events.UserUpdate, async (oldUser, newUser) => {
+    if (oldUser.avatar === newUser.avatar) {
+        return; // if the avatar hasn't changed, return without sending any log message
+    }
+
+    const Modlog = require('./Schemas/modlog');
+
+   const guildId = newUser.guild
+;
+    const modlog = await Modlog.findOne({ guildId });
+
+    if (!modlog || !modlog.logChannelId) {
+        return; // if there's no log channel set up, return without sending any log message
+    }
+
+    const mChannel = await newUser.guild.channels.cache.get(modlog.logChannelId);
+
+    const embed = new EmbedBuilder()
+        .setColor("Red")
+        .setTitle("Avatar Changed")
+        .setDescription(`**User:** ${newUser.username}#${newUser.discriminator} (${newUser.id})`)
+        .setImage(newUser.displayAvatarURL({ format: "png", dynamic: true }))
+        .setTimestamp()
+        .setFooter({ text: "Mod Logging" });
+
+    mChannel.send({ embeds: [embed] });
+});
+
+
+client.on(Events.GuildMemberRemove, async (member) => {
+    const Modlog = require('./Schemas/modlog');
+
+    const guildId = member.guild.id;
+    const modlog = await Modlog.findOne({ guildId });
+
+    if (!modlog || !modlog.logChannelId) {
+        return; // if there's no log channel set up, return without sending any log message
+    }
+
+    member.guild.fetchAuditLogs({
+        type: AuditLogEvent.MemberKick,
+    })
+    .then (async audit => {
+
+        const { executor } = audit.entries.first();
+
+    const mChannel = await member.guild.channels.cache.get(modlog.logChannelId);
+
+    const embed = new EmbedBuilder()
+        .setColor("Red")
+        .setTitle("Member Kicked")
+        .addFields({ name: 'User', value: `${member.user.username}#${member.user.discriminator} (${member.user.id})` })
+        .addFields({ name: "Kicked By", value: `${executor.tag}`, inline: false})
+        .setFooter({ text: "Mod Logging" });
+
+    mChannel.send({ embeds: [embed] });
+    })
+});
+
+
+client.on(Events.InviteCreate, async (invite) => {
+    const Modlog = require('./Schemas/modlog');
+
+    const guildId = invite.guild.id;
+    const modlog = await Modlog.findOne({ guildId });
+
+    if (!modlog || !modlog.logChannelId) {
+        return; // if there's no log channel set up, return without sending any log message
+    }
+
+    const mChannel = await invite.guild.channels.cache.get(modlog.logChannelId);
+
+    const embed = new EmbedBuilder()
+        .setColor("Red")
+        .setTitle("Invite Created")
+        .addFields({ name: "Code", value: `${invite.code}`, inline: true })
+        .addFields({ name: "Channel", value: `${invite.channel}`, inline: true })
+        .addFields({ name: "Inviter", value: `${invite.inviter}`, inline: true })
+        .setTimestamp()
+        .setFooter({ text: "Mod Logging" });
+
+    mChannel.send({ embeds: [embed] });
+});
+
+client.on(Events.GuildMemberUpdate, async (oldMember, newMember) => {
+    const Modlog = require('./Schemas/modlog');
+
+    const guildId = newMember.guild.id;
+    const modlog = await Modlog.findOne({ guildId });
+
+    if (!modlog || !modlog.logChannelId) {
+        return; // if there's no log channel set up, return without sending any log message
+    }
+    newMember.guild.fetchAuditLogs({
+        type: AuditLogEvent.MemberUpdate,
+    })
+    .then (async audit => {
+
+        const { executor } = audit.entries.first();
+
+        const mChannel = await newMember.guild.channels.cache.get(modlog.logChannelId);
+
+        if (oldMember.roles.cache.size < newMember.roles.cache.size) {
+          const addedRoles = newMember.roles.cache.filter(role => !oldMember.roles.cache.has(role.id));
+          const roleNameArray = addedRoles.map(role => `<@&${role.id}>`);
+          const rolesAddedString = roleNameArray.join(", ");
+      
+          const embed = new EmbedBuilder()
+            .setColor("Red")
+            .setTitle("Roles Added")
+            .addFields(
+              { name: "User", value: `<@${newMember.id}>`, inline: true },
+              { name: "Roles Added", value: rolesAddedString, inline: true },
+              { name: "Role Added By", value: `${executor.tag}`, inline: false }
+            )
+            .setTimestamp()
+            .setFooter({ text: "Mod Logging"});
+      
+          mChannel.send({ embeds: [embed] });
+        }
+    })
+});
+  
+
+client.on(Events.GuildMemberUpdate, async (oldMember, newMember) => {
+    const Modlog = require('./Schemas/modlog');
+
+    const guildId = newMember.guild.id;
+    const modlog = await Modlog.findOne({ guildId });
+
+    if (!modlog || !modlog.logChannelId) {
+        return; // if there's no log channel set up, return without sending any log message
+    }
+
+    newMember.guild.fetchAuditLogs({
+        type: AuditLogEvent.MemberRoleUpdate,
+    })
+    .then (async audit => {
+
+        const { executor } = audit.entries.first();
+        const mChannel = await newMember.guild.channels.cache.get(modlog.logChannelId);
+
+        if (oldMember.roles.cache.size > newMember.roles.cache.size) {
+            const removedRoles = oldMember.roles.cache.filter(role => !newMember.roles.cache.has(role.id));
+            const roleNameArray = removedRoles.map(role => `<@&${role.id}>`);
+            const rolesRemovedString = roleNameArray.join(", ");
+
+            const embed = new EmbedBuilder()
+                .setColor("Red")
+                .setTitle("Roles Removed")
+                .addFields(
+                    { name: "User", value: `<@${newMember.id}>`, inline: true },
+                    { name: "Roles Removed", value: rolesRemovedString, inline: true },
+                    { name: "Role Removed By", value: `${executor.tag}`, inline: false }
+                )
+                .setTimestamp()
+                .setFooter({ text: "Mod Logging"});
+
+            mChannel.send({ embeds: [embed] });
+        }
+    });
+});
+
+//server joined//
+client.on('guildCreate', async (guild) => {
+    const channel = await client.channels.cache.get('1060193672433520760');
+    const name = guild.name;
+    const memberCount = guild.memberCount;
+    const owner = guild.ownerId;
+
+    const embed = new EmbedBuilder()
+        .setColor("Green")
+        .setTitle("New server joined")
+        .addFields({ name: 'Server Name', value: `> ${name}` })
+        .addFields({ name: 'Server Member Count', value: `> ${memberCount}` })
+        .addFields({ name: 'Server Owner', value: `> <@${owner}>` })
+        .addFields({ name: 'Server Age', value: `> <t:${Math.floor(guild.createdTimestamp / 1000)}:R>` })
+        .setTimestamp();
+    
+    await channel.send({ embeds: [embed] });
+});
+///guild leave//
+client.on('guildDelete', async (guild) => {
+    const channel = await client.channels.cache.get('1060193672433520760');
+    const name = guild.name;
+    const memberCount = guild.memberCount;
+    const owner = guild.ownerId;
+
+    const embed = new EmbedBuilder()
+        .setColor("Red")
+        .setTitle("Server left")
+        .addFields({ name: 'Server Name', value: `> ${name}` })
+        .addFields({ name: 'Server Member Count', value: `> ${memberCount}` })
+        .addFields({ name: 'Server Owner', value: `> <@${owner}>` })
+        .setTimestamp();
+    
+    await channel.send({ embeds: [embed] });
+});

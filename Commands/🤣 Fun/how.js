@@ -35,34 +35,6 @@ let target = interaction.options.getUser('target') || interaction.user;
      message.react('🗿') 
     } 
         
-        if (target.id === "702527570905792594") {
-
-     
-
-     const embed = new EmbedBuilder() 
-
-    .setTitle(`> ${target.username} is really gay! `)
-
-    .addFields({ name: `• Bro is gay as hell`, value: `> ${target} is really gay because he is 100% gay`}) 
-
-    .setTimestamp()
-
-     
-        .setAuthor({ name: `🌈 How Not Gay Tool`})
-
-        .setFooter({ text: `🌈 Not Gay Percentage`})
-
-        .setColor('Purple')
-
-     
-
-     const message = await interaction.reply({embeds: [embed], fetchReply: true
-
- })
-
-     message.react('🗿') 
-
-    } 
         // You can delete this if. It's in case that you want to add a second person that is 100% halal
         if (target.id === "855115379462635580" ) {
 
@@ -73,7 +45,7 @@ let target = interaction.options.getUser('target') || interaction.user;
     .setTitle(`> ${target.username} can not be gay! `)
 
     .addFields({ name: `• Why he can't be gay`, value: `> ${target} can't be gay because he is a 100% halal!`}) 
-
+	     .setThumbnail("https://steamuserimages-a.akamaihd.net/ugc/1817762107547034471/9247627F576A84BF50C7A1FBBE035E95D131DD27/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false")
     .setTimestamp()
 
      
@@ -89,10 +61,12 @@ let target = interaction.options.getUser('target') || interaction.user;
 
  })
 
-     message.react('🍆') 
+     message.react('🗿') 
 
     } 
      
+        
+   
 
         const sub = interaction.options.getSubcommand();
 

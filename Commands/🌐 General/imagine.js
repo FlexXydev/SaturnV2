@@ -10,27 +10,26 @@ const openai = new OpenAIApi(configuration);
 
 module.exports = {
     data: new SlashCommandBuilder()
-    .setName('ask-gpt')
-    .setDescription('Ask GPT a question')
-    .addStringOption(option => option.setName('question').setDescription('The question to ask GPT').setRequired(true))
+    .setName('imagine')
+    .setDescription('Generate an image')
+    .addStringOption(option => option.setName('prompt').setDescription('The question to generate').setRequired(true))
     .setDMPermission(false), 
     async execute (interaction) {
         
         await interaction.deferReply();
 
-        const question = interaction.options.getString('question')
+        const prompt = interaction.options.getString('prompt')
 
-            const res = await openai.createCompletion({
-                model: 'text-davinci-003',
-                max_tokens: 2048,
-                temperature: 0.5,
-                prompt: question
+            const res = await openai.createImage({
+				n:1,
+                size: "256x256",
+                prompt: prompt
             })
 
             const embed = new EmbedBuilder()
-            .setTitle(`${question}`)
+            .setTitle(`${prompt}`)
             .setColor('Random')
-            .setDescription(`\`\`\`${res.data.choices[0].text}\`\`\``)
+            .setImage(`${res.data.data[0].url}`)
 
             await interaction.editReply({ embeds: [embed] })
 

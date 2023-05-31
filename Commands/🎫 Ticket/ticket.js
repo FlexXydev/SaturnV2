@@ -40,12 +40,42 @@
           .setDescription('Select the everyone role.')
           .setRequired(true)
       )
+       .addStringOption((option) =>
+        option
+          .setName('title')
+          .setDescription('Choose a title for the ticket embed.')
+          .setRequired(true)
+      )
       .addStringOption((option) =>
         option
           .setName('description')
           .setDescription('Choose a description for the ticket embed.')
           .setRequired(true)
       )
+      .addStringOption(option => option
+        .setName("color")
+        .setDescription("The color of the embed")
+        .setRequired(true)
+        .addChoices(
+            {name: "aqua", value: "#00FFFF"},
+            {name: "blurple", value: "#7289DA"},
+            {name: "fuchsia", value: "#FF00FF"},
+            {name: "gold", value: "#FFD700"},
+            {name: "green", value: "#008000"},
+            {name: "grey", value: "#808080"},
+            {name: "greyple", value: "#7D7F9A"},
+            {name: "light-grey", value: "#D3D3D3"},
+            {name: "luminos-vivid-pink", value: "#FF007F"},
+            {name: "navy", value: "#000080"},
+            {name: "not-quite-black", value: "#232323"},
+            {name: "orange", value: "#FFA500"},
+            {name: "purple", value: "#800080"},
+            {name: "red", value: "#FF0000"},
+            {name: "white", value: "#FFFFFF"},
+            {name: "yellow", value: "#FFFF00"},
+            {name: "blue", value: "#0000FF"}
+        )
+    )
       .addStringOption((option) =>
         option
           .setName('button')
@@ -57,6 +87,12 @@
           .setName('emoji')
           .setDescription('Choose a style, so choose a emoji.')
           .setRequired(true)
+      )
+      .addStringOption((option) =>
+        option
+          .setName('thumbnail')
+          .setDescription('Put here an image link for the ticket embed.')
+          .setRequired(false)
       ),
     async execute(interaction) {
       const { guild, options } = interaction;
@@ -66,9 +102,12 @@
         const transcripts = options.getChannel('transcripts');
         const handlers = options.getRole('handlers');
         const everyone = options.getRole('everyone');
+        const title = options.getString('title');
         const description = options.getString('description');
+        const thumbnail = options.getString('thumbnail');
         const button = options.getString('button');
         const emoji = options.getString('emoji');
+        const color = options.getString('color')
         await TicketSetup.findOneAndUpdate(
           { GuildID: guild.id },
           {
@@ -78,6 +117,9 @@
             Handlers: handlers.id,
             Everyone: everyone.id,
             Description: description,
+            Thumbnail: thumbnail,
+            Title: title,
+            Color: color,
             Button: button,
             Emoji: emoji,
           },
@@ -86,7 +128,7 @@
             upsert: true,
           }
         );
-        const embed = new EmbedBuilder().setDescription(description);
+        const embed = new EmbedBuilder().setDescription(description).setTitle(title).setColor(color).setThumbnail(`${thumbnail}`);
         const buttonshow = new ButtonBuilder()
           .setCustomId(button)
           .setLabel(button)
