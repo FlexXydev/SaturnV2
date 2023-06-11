@@ -1,221 +1,639 @@
-17:48:57 | Uncaught Exception Monitor: Error: Cannot find module './Schemas/antilink'
-Require stack:
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-17:48:57 | Uncaught Exception: Error: Cannot find module './Schemas/antilink'
-Require stack:
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-17:48:57 | Unhandled Rejection: Error: Cannot find module './Schemas/antilink'
-Require stack:
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Commands\🎶 Music\forward.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Handlers\commandHandler.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-17:49:12 | Unhandled Rejection: Error: Cannot find module './Schemas/antilink'
-Require stack:
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Commands\🎶 Music\forward.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Handlers\commandHandler.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-17:48:57 | Unhandled Rejection: Error: Cannot find module './Schemas/antilink'
-Require stack:
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Commands\🎶 Music\forward.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Handlers\commandHandler.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-17:49:12 | Unhandled Rejection: Error: Cannot find module './Schemas/antilink'
-Require stack:
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Commands\🎶 Music\forward.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Handlers\commandHandler.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-17:49:13 | Unhandled Rejection: Error: Cannot find module './Schemas/antilink'
-Require stack:
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Commands\🎶 Music\forward.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Handlers\commandHandler.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-17:48:57 | Unhandled Rejection: Error: Cannot find module './Schemas/antilink'
-Require stack:
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Commands\🎶 Music\forward.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Handlers\commandHandler.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-17:49:12 | Unhandled Rejection: Error: Cannot find module './Schemas/antilink'
-Require stack:
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Commands\🎶 Music\forward.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Handlers\commandHandler.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-17:49:13 | Unhandled Rejection: Error: Cannot find module './Schemas/antilink'
-Require stack:
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Commands\🎶 Music\forward.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Handlers\commandHandler.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-17:49:14 | Unhandled Rejection: Error: Cannot find module './Schemas/antilink'
-Require stack:
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Commands\🎶 Music\forward.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Handlers\commandHandler.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-17:48:57 | Unhandled Rejection: Error: Cannot find module './Schemas/antilink'
-Require stack:
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Commands\🎶 Music\forward.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Handlers\commandHandler.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-17:49:12 | Unhandled Rejection: Error: Cannot find module './Schemas/antilink'
-Require stack:
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Commands\🎶 Music\forward.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Handlers\commandHandler.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-17:49:13 | Unhandled Rejection: Error: Cannot find module './Schemas/antilink'
-Require stack:
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Commands\🎶 Music\forward.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Handlers\commandHandler.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-17:49:14 | Unhandled Rejection: Error: Cannot find module './Schemas/antilink'
-Require stack:
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Commands\🎶 Music\forward.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Handlers\commandHandler.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-17:49:18 | Unhandled Rejection: Error: Cannot find module './Schemas/antilink'
-Require stack:
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Commands\🎶 Music\forward.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Handlers\commandHandler.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-17:48:57 | Unhandled Rejection: Error: Cannot find module './Schemas/antilink'
-Require stack:
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Commands\🎶 Music\forward.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Handlers\commandHandler.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-17:49:12 | Unhandled Rejection: Error: Cannot find module './Schemas/antilink'
-Require stack:
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Commands\🎶 Music\forward.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Handlers\commandHandler.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-17:49:13 | Unhandled Rejection: Error: Cannot find module './Schemas/antilink'
-Require stack:
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Commands\🎶 Music\forward.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Handlers\commandHandler.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-17:49:14 | Unhandled Rejection: Error: Cannot find module './Schemas/antilink'
-Require stack:
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Commands\🎶 Music\forward.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Handlers\commandHandler.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-17:49:18 | Unhandled Rejection: Error: Cannot find module './Schemas/antilink'
-Require stack:
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Commands\🎶 Music\forward.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Handlers\commandHandler.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-17:49:25 | Unhandled Rejection: Error: Cannot find module './Schemas/antilink'
-Require stack:
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Commands\🎶 Music\forward.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Handlers\commandHandler.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-17:48:57 | Unhandled Rejection: Error: Cannot find module './Schemas/antilink'
-Require stack:
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Commands\🎶 Music\forward.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Handlers\commandHandler.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-17:49:12 | Unhandled Rejection: Error: Cannot find module './Schemas/antilink'
-Require stack:
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Commands\🎶 Music\forward.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Handlers\commandHandler.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-17:49:13 | Unhandled Rejection: Error: Cannot find module './Schemas/antilink'
-Require stack:
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Commands\🎶 Music\forward.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Handlers\commandHandler.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-17:49:14 | Unhandled Rejection: Error: Cannot find module './Schemas/antilink'
-Require stack:
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Commands\🎶 Music\forward.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Handlers\commandHandler.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-17:49:18 | Unhandled Rejection: Error: Cannot find module './Schemas/antilink'
-Require stack:
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Commands\🎶 Music\forward.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Handlers\commandHandler.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-17:49:25 | Unhandled Rejection: Error: Cannot find module './Schemas/antilink'
-Require stack:
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Commands\🎶 Music\forward.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Handlers\commandHandler.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-17:49:32 | Unhandled Rejection: Error: Cannot find module './Schemas/antilink'
-Require stack:
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Commands\🎶 Music\forward.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Handlers\commandHandler.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-17:48:57 | Unhandled Rejection: Error: Cannot find module './Schemas/antilink'
-Require stack:
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Commands\🎶 Music\forward.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Handlers\commandHandler.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-17:49:12 | Unhandled Rejection: Error: Cannot find module './Schemas/antilink'
-Require stack:
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Commands\🎶 Music\forward.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Handlers\commandHandler.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-17:49:13 | Unhandled Rejection: Error: Cannot find module './Schemas/antilink'
-Require stack:
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Commands\🎶 Music\forward.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Handlers\commandHandler.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-17:49:14 | Unhandled Rejection: Error: Cannot find module './Schemas/antilink'
-Require stack:
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Commands\🎶 Music\forward.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Handlers\commandHandler.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-17:49:18 | Unhandled Rejection: Error: Cannot find module './Schemas/antilink'
-Require stack:
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Commands\🎶 Music\forward.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Handlers\commandHandler.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-17:49:25 | Unhandled Rejection: Error: Cannot find module './Schemas/antilink'
-Require stack:
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Commands\🎶 Music\forward.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Handlers\commandHandler.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-17:49:32 | Unhandled Rejection: Error: Cannot find module './Schemas/antilink'
-Require stack:
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Commands\🎶 Music\forward.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Handlers\commandHandler.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-17:49:33 | Unhandled Rejection: Error: Cannot find module './Schemas/antilink'
-Require stack:
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Commands\🎶 Music\forward.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\Handlers\commandHandler.js
-- C:\Users\riadh\OneDrive\Bureau\Mehdi\SaturnTest\main.js
-17:50:00 | Discord API Error: ReferenceError: mongoose is not defined
-17:50:00 | Discord API Error: TypeError: Cannot read properties of null (reading 'id')
-17:54:07 | Discord API Error: TypeError: (intermediate value) is not a constructor
-17:55:07 | Discord API Error: ReferenceError: interaction is not defined
-18:07:08 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'name')
+07:04:57 | Discord API Error: TypeError: Cannot read properties of null (reading 'Msg')
+07:04:57 | Discord API Error: TypeError: Cannot read properties of null (reading 'guild')
+Unhandled Rejection: DiscordAPIError[10062]: Unknown interaction
+07:16:35 | Unhandled Rejection: SyntaxError: Unexpected identifier 'Button'
+07:24:05 | Unhandled Rejection: SyntaxError: Unexpected token 'return'
+07:24:37 | Unhandled Rejection: DiscordAPIError[50035]: Invalid Form Body
+options[9][APPLICATION_COMMAND_OPTIONS_REQUIRED_INVALID]: Required options must be placed before non-required options
+options[10][APPLICATION_COMMAND_OPTIONS_REQUIRED_INVALID]: Required options must be placed before non-required options
+07:25:29 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+07:25:29 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+07:25:29 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+07:25:29 | Unhandled Rejection: DiscordAPIError[50013]: Missing Permissions
+07:25:29 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+07:25:29 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+07:25:29 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+12:00:16 | Unhandled Rejection: DiscordAPIError[50013]: Missing Permissions
+14:33:54 | Discord API Error: TypeError: Cannot read properties of null (reading 'id')
+14:43:19 | Discord API Error: TypeError: Cannot read properties of null (reading 'Msg')
+14:43:19 | Unhandled Rejection: DiscordAPIError[50013]: Missing Permissions
+14:43:19 | Unhandled Rejection: DiscordAPIError[50013]: Missing Permissions
+09:35:08 | Discord API Error: TypeError: Cannot read properties of null (reading 'id')
+09:35:08 | Unhandled Rejection: DiscordAPIError[50013]: Missing Permissions
+10:25:39 | Unhandled Rejection: DiscordAPIError[50013]: Missing Permissions
+10:25:39 | Unhandled Rejection: DiscordAPIError[50013]: Missing Permissions
+13:56:16 | Unhandled Rejection: DiscordAPIError[10008]: Unknown Message
+13:56:16 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+13:56:16 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+13:56:16 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+13:56:16 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+13:56:16 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+13:56:16 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+13:56:16 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+13:56:16 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+13:56:16 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+13:56:16 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+13:56:16 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+13:56:16 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+13:56:16 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+13:56:16 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+13:56:16 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+13:56:16 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+13:56:16 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+13:56:16 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+13:56:16 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+13:56:16 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+13:56:16 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+13:56:16 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+13:56:16 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+13:56:16 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+13:56:16 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+13:56:16 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+13:56:16 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+13:56:16 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+13:56:16 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+13:56:16 | Discord API Error: TypeError: Cannot read properties of null (reading 'guild')
+13:56:16 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+13:56:16 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+13:56:16 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+13:56:16 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+13:56:16 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+13:56:16 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+13:56:16 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+13:56:16 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+13:56:16 | Unhandled Rejection: DiscordAPIError[50013]: Missing Permissions
+13:56:16 | Unhandled Rejection: DiscordAPIError[50013]: Missing Permissions
+13:56:16 | Discord API Error: TypeError: Cannot read properties of null (reading 'guild')
+13:56:16 | Discord API Error: TypeError: Cannot read properties of null (reading 'Msg')
+13:56:16 | Unhandled Rejection: Error [InteractionAlreadyReplied]: The reply to this interaction has already been sent or deferred.
+13:56:16 | Discord API Error: TypeError: Cannot read properties of null (reading 'Msg')
+13:56:16 | Unhandled Rejection: Error [InteractionAlreadyReplied]: The reply to this interaction has already been sent or deferred.
+13:56:16 | Discord API Error: TypeError: Cannot read properties of null (reading 'Msg')
+13:56:16 | Unhandled Rejection: Error [InteractionAlreadyReplied]: The reply to this interaction has already been sent or deferred.
+13:56:16 | Discord API Error: TypeError: Cannot read properties of null (reading 'Msg')
+13:56:16 | Unhandled Rejection: ReferenceError: PermissionFlagsBits is not defined
+13:56:16 | Discord API Error: TypeError: Cannot read properties of null (reading 'Msg')
+13:56:16 | Unhandled Rejection: ReferenceError: PermissionFlagsBits is not defined
+13:56:16 | Discord API Error: TypeError: Cannot read properties of null (reading 'Msg')
+13:56:16 | Unhandled Rejection: ReferenceError: PermissionFlagsBits is not defined
+13:56:16 | Discord API Error: TypeError: Cannot read properties of null (reading 'Msg')
+13:56:16 | Unhandled Rejection: ReferenceError: PermissionFlagsBits is not defined
+13:56:16 | Discord API Error: TypeError: Cannot read properties of null (reading 'Msg')
+13:56:16 | Unhandled Rejection: ReferenceError: PermissionFlagsBits is not defined
+13:56:16 | Discord API Error: TypeError: Cannot read properties of null (reading 'Msg')
+13:56:16 | Unhandled Rejection: ReferenceError: PermissionFlagsBits is not defined
+13:56:16 | Discord API Error: TypeError: Cannot read properties of null (reading 'Msg')
+13:56:16 | Unhandled Rejection: ReferenceError: PermissionFlagsBits is not defined
+13:56:16 | Discord API Error: TypeError: Cannot read properties of null (reading 'Msg')
+16:01:45 | Discord API Error: TypeError: Cannot read properties of null (reading 'Msg')
+16:09:30 | Discord API Error: TypeError: Cannot read properties of null (reading 'msg')
+16:09:30 | Unhandled Rejection: DiscordAPIError[50013]: Missing Permissions
+16:33:10 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'name')
+16:33:31 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'name')
+16:38:33 | Discord API Error: TypeError: Cannot read properties of null (reading 'msg')
+16:38:33 | Discord API Error: TypeError: Cannot read properties of null (reading 'msg')
+16:38:33 | Unhandled Rejection: DiscordAPIError[50013]: Missing Permissions
+16:38:33 | Unhandled Rejection: DiscordAPIError[50013]: Missing Permissions
+16:38:33 | Discord API Error: TypeError: Cannot read properties of null (reading 'msg')
+16:38:33 | Unhandled Rejection: DiscordAPIError[50013]: Missing Permissions
+16:38:33 | Discord API Error: TypeError: Cannot read properties of null (reading 'msg')
+16:38:33 | Unhandled Rejection: DiscordAPIError[50013]: Missing Permissions
+16:38:33 | Discord API Error: TypeError: Cannot read properties of null (reading 'msg')
+16:38:33 | Unhandled Rejection: DiscordAPIError[50013]: Missing Permissions
+16:38:33 | Discord API Error: TypeError: Cannot read properties of null (reading 'msg')
+16:38:33 | Unhandled Rejection: DiscordAPIError[50013]: Missing Permissions
+16:38:33 | Discord API Error: TypeError: Cannot read properties of null (reading 'msg')
+16:38:33 | Discord API Error: TypeError: Cannot read properties of null (reading 'msg')
+12:26:03 | Discord API Error: TypeError: Cannot read properties of undefined (reading '0')
+12:26:03 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+12:26:03 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+12:26:03 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+12:26:03 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+02:03:19 | Uncaught Exception Monitor: ReferenceError: bot is not defined
+02:03:19 | Uncaught Exception: ReferenceError: bot is not defined
+02:03:19 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:26 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:19 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:26 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:30 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:19 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:26 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:30 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:19 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:26 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:30 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:31 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:19 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:26 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:30 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:31 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:19 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:26 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:30 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:31 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:36 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:19 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:26 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:30 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:31 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:36 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:19 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:26 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:30 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:31 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:36 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:41 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:19 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:26 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:30 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:31 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:36 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:41 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:19 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:26 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:30 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:31 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:36 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:41 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:47 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:19 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:26 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:30 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:31 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:36 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:41 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:47 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:19 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:26 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:30 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:31 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:36 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:41 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:47 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:54 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:19 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:26 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:30 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:31 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:36 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:41 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:47 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:54 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:19 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:26 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:30 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:31 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:36 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:41 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:47 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:54 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:00 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:19 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:26 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:30 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:31 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:36 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:41 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:47 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:54 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:00 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:19 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:03:26 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:03:30 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:03:31 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:03:36 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:03:41 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:03:47 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:03:54 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:04:00 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:04:00 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:03:19 | Uncaught Exception: ReferenceError: err is not defined
+02:03:26 | Uncaught Exception: ReferenceError: err is not defined
+02:03:30 | Uncaught Exception: ReferenceError: err is not defined
+02:03:31 | Uncaught Exception: ReferenceError: err is not defined
+02:03:36 | Uncaught Exception: ReferenceError: err is not defined
+02:03:41 | Uncaught Exception: ReferenceError: err is not defined
+02:03:47 | Uncaught Exception: ReferenceError: err is not defined
+02:03:54 | Uncaught Exception: ReferenceError: err is not defined
+02:04:00 | Uncaught Exception: ReferenceError: err is not defined
+02:04:00 | Uncaught Exception: ReferenceError: err is not defined
+02:03:19 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:26 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:30 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:31 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:36 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:41 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:47 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:54 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:00 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:00 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:19 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:26 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:30 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:31 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:36 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:41 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:47 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:54 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:00 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:00 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:19 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:03:26 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:03:30 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:03:31 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:03:36 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:03:41 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:03:47 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:03:54 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:04:00 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:04:00 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:04:06 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:03:19 | Uncaught Exception: ReferenceError: err is not defined
+02:03:26 | Uncaught Exception: ReferenceError: err is not defined
+02:03:30 | Uncaught Exception: ReferenceError: err is not defined
+02:03:31 | Uncaught Exception: ReferenceError: err is not defined
+02:03:36 | Uncaught Exception: ReferenceError: err is not defined
+02:03:41 | Uncaught Exception: ReferenceError: err is not defined
+02:03:47 | Uncaught Exception: ReferenceError: err is not defined
+02:03:54 | Uncaught Exception: ReferenceError: err is not defined
+02:04:00 | Uncaught Exception: ReferenceError: err is not defined
+02:04:00 | Uncaught Exception: ReferenceError: err is not defined
+02:04:06 | Uncaught Exception: ReferenceError: err is not defined
+02:03:19 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:03:26 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:03:30 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:03:31 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:03:36 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:03:41 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:03:47 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:03:54 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:04:00 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:04:00 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:04:06 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:03:19 | Uncaught Exception: ReferenceError: err is not defined
+02:03:26 | Uncaught Exception: ReferenceError: err is not defined
+02:03:30 | Uncaught Exception: ReferenceError: err is not defined
+02:03:31 | Uncaught Exception: ReferenceError: err is not defined
+02:03:36 | Uncaught Exception: ReferenceError: err is not defined
+02:03:41 | Uncaught Exception: ReferenceError: err is not defined
+02:03:47 | Uncaught Exception: ReferenceError: err is not defined
+02:03:54 | Uncaught Exception: ReferenceError: err is not defined
+02:04:00 | Uncaught Exception: ReferenceError: err is not defined
+02:04:00 | Uncaught Exception: ReferenceError: err is not defined
+02:04:06 | Uncaught Exception: ReferenceError: err is not defined
+02:03:19 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:03:26 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:03:30 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:03:31 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:03:36 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:03:41 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:03:47 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:03:54 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:04:00 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:04:00 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:04:06 | Uncaught Exception Monitor: ReferenceError: err is not defined
+02:03:19 | Uncaught Exception: ReferenceError: err is not defined
+02:03:26 | Uncaught Exception: ReferenceError: err is not defined
+02:03:30 | Uncaught Exception: ReferenceError: err is not defined
+02:03:31 | Uncaught Exception: ReferenceError: err is not defined
+02:03:36 | Uncaught Exception: ReferenceError: err is not defined
+02:03:41 | Uncaught Exception: ReferenceError: err is not defined
+02:03:47 | Uncaught Exception: ReferenceError: err is not defined
+02:03:54 | Uncaught Exception: ReferenceError: err is not defined
+02:04:00 | Uncaught Exception: ReferenceError: err is not defined
+02:04:00 | Uncaught Exception: ReferenceError: err is not defined
+02:04:06 | Uncaught Exception: ReferenceError: err is not defined
+02:03:19 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:26 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:30 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:31 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:36 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:41 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:47 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:54 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:00 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:00 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:06 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:19 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:26 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:30 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:31 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:36 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:41 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:47 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:54 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:00 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:00 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:06 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:19 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:26 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:30 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:31 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:36 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:41 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:47 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:54 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:00 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:00 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:06 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:13 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:19 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:26 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:30 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:31 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:36 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:41 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:47 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:54 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:00 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:00 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:06 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:13 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:19 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:26 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:30 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:31 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:36 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:41 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:47 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:54 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:00 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:00 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:06 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:13 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:19 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:19 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:26 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:30 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:31 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:36 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:41 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:47 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:54 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:00 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:00 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:06 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:13 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:19 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:19 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:26 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:30 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:31 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:36 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:41 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:47 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:54 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:00 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:00 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:06 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:13 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:19 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:25 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:19 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:26 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:30 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:31 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:36 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:41 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:47 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:54 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:00 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:00 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:06 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:13 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:19 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:25 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:19 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:26 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:30 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:31 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:36 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:41 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:47 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:54 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:00 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:00 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:06 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:13 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:19 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:25 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:25 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:19 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:26 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:30 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:31 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:36 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:41 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:47 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:54 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:00 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:00 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:06 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:13 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:19 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:25 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:25 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:19 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:26 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:30 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:31 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:36 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:41 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:47 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:54 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:00 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:00 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:06 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:13 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:19 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:25 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:25 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:33 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:19 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:26 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:30 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:31 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:36 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:41 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:47 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:54 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:00 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:00 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:06 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:13 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:19 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:25 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:25 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:33 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:19 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:26 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:30 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:31 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:36 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:41 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:47 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:54 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:00 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:00 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:06 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:13 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:19 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:25 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:25 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:33 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:40 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:19 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:26 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:30 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:31 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:36 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:41 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:47 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:54 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:00 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:00 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:06 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:13 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:19 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:25 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:25 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:33 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:40 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:19 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:26 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:30 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:31 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:36 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:41 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:47 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:54 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:00 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:00 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:06 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:13 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:19 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:25 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:25 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:33 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:40 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:41 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:19 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:26 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:30 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:31 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:36 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:41 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:47 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:54 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:00 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:00 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:06 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:13 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:19 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:25 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:25 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:33 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:40 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:41 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:19 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:26 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:30 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:31 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:36 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:41 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:47 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:54 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:00 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:00 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:06 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:13 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:19 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:25 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:25 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:33 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:40 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:41 | Unhandled Rejection: ReferenceError: bot is not defined
+02:04:47 | Unhandled Rejection: ReferenceError: bot is not defined
+02:03:19 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:26 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:30 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:31 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:36 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:41 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:47 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:54 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:00 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:00 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:06 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:13 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:19 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:25 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:25 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:33 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:40 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:41 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:47 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:19 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:26 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:30 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:31 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:36 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:41 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:47 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:03:54 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:00 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:00 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:06 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:13 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:19 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:25 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:25 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:33 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:40 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:41 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:47 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:04:54 | Unhandled Rejection: TypeError: Cannot read properties of undefined (reading 'send')
+02:05:06 | Discord API Error: TypeError: Cannot read properties of null (reading 'id')
+02:05:06 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+02:05:06 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+02:05:06 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+02:05:06 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+02:05:06 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+02:05:06 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+02:05:06 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+02:05:06 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+02:05:06 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+02:05:06 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+02:05:06 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+02:05:06 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+02:05:06 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+02:05:06 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+02:05:06 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+02:05:06 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+02:05:06 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+02:05:06 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+02:05:06 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+02:05:06 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+02:05:06 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+02:05:06 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+02:05:06 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+02:05:06 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+02:05:06 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+02:05:06 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+02:05:06 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+02:05:06 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+02:05:06 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+02:05:06 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+02:05:06 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+02:05:06 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+02:05:06 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+02:05:06 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+02:05:06 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+02:05:06 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+12:49:15 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+12:49:15 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+12:49:15 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+12:49:15 | Discord API Error: TypeError: Cannot read properties of undefined (reading 'id')
+15:03:10 | Unhandled Rejection: DiscordAPIError[50013]: Missing Permissions
+15:03:10 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
+15:03:10 | Unhandled Rejection: TypeError: Cannot destructure property 'executor' of 'audit.entries.first(...)' as it is undefined.
