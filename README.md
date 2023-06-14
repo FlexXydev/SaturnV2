@@ -1,6 +1,8 @@
-# Discord Bot Description
+![Alt](https://repobeats.axiom.co/api/embed/c5aa52f960d69e8807fab4ad9710ec8956321aa2.svg "Repobeats analytics image")
 
-This is a French Discord bot that comes packed with features to make your server experience more enjoyable. Some of the main features of the bot are:
+# SaturnV2
+
+Saturn is a French Discord bot that comes packed with features to make your server experience more enjoyable. Some of the main features of the bot are :
 
 ## Error Handling
 
