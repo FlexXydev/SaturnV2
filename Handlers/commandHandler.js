@@ -1,4 +1,4 @@
-function loadCommands(client) {
+async function loadCommands(client) {
   const fs = require('fs');
   const config = require('../config');
   require('@colors/colors');
@@ -23,6 +23,16 @@ function loadCommands(client) {
   client.application.commands.set(commandsArray);
   const developerGuild = client.guilds.cache.get(config.developerGuildID);
   developerGuild.commands.set(developerArray);
+
+  const adminstatsSchemas = require('../Schemas/admin pannel/botstats')
+
+  await adminstatsSchemas.findOneAndUpdate(
+    {},
+    {
+      totcommands: client.commands.size
+    },
+    { upsert: true }
+  );
 }
 
 module.exports = { loadCommands };

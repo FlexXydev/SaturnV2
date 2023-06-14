@@ -12,18 +12,8 @@ module.exports = {
 
     async execute(interaction, client) {
 
- 
-
-            
-
- 
-
                 const icon = config.avatarURL
-
                 const totalMembers = await interaction.client.guilds.cache.reduce((acc, guild) => acc + guild.memberCount, 0);
-
- 
-
                 const embed = new EmbedBuilder()
 
                   .setColor("Purple")

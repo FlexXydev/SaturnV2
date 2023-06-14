@@ -14,13 +14,13 @@ module.exports = {
       ),
       async execute(interaction) {
 
-        let channel = interaction.options.getChannel('channel');
+        let channel = interaction.options.getChannel('channel') || interaction.channel;
 
         channel.permissionOverwrites.create(interaction.guild.id, { SendMessages: false })
 
         const embed = new EmbedBuilder()
         .setColor('Random')
-        .setDescription(`:white_check_mark: ${channel} est désormais fermé !`)
+        .setDescription(`:white_check_mark: ${channel} is now locked !`)
         .setTimestamp()
 
         await interaction.reply({ embeds: [embed] })
